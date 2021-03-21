@@ -2,48 +2,93 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/b3ac2c6d7a.js" crossorigin="anonymous"></script>
+    <title>Barkle</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class="signup">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
+    <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand"><a class="navbar-item" href="#"><img src="./assets/img/barkle-text.png" alt="logo" width="150"></a><a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
+          <div class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item" href="#"></a>            <a class="navbar-item" href="#"></a>            <a class="navbar-item" href="#"></a>
+              <a class="navbar-item" href="#"></a>
+            </div>
+            <div class="navbar-end">
+              <!-- <div class="navbar-item">
+                <div class="buttons"><a class="button is-light" href="#">Log in</a><a class="button is-primary" href="#">Sign up</a></div>
+              </div> -->
+            </div>
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
+        </div>
+      </nav>
+      <section class="section">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-5">
+              <h4 class="title is-4">Sign in to Barkle</h4>
+              <form>
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="email" placeholder="Email">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="password" placeholder="Password">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <button class="button mb-2 is-primary is-fullwidth">Sign In!</button>
+                    <button class="button is-danger is-fullwidth mb-2">
+                      <span class="icon">
+                        <i class="fab fa-google"></i>
+                      </span>
+                      <span>Sign In With Google</span>
+                    </button>
+                    <button class="button mb-6 is-info is-fullwidth">
+                      <span class="icon">
+                        <i class="fab fa-facebook-f"></i>
+                      </span>
+                      <span>Sign In With Facebook</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="column is-5 is-offset-1">
+              <h4 class="title is-spaced is-4">Don't have an account?</h4>
+              <p class="subtitle">No account?  No Problem!  Click below to join the Barkle community.</p>
+              <button class="button mb-2 is-primary is-fullwidth">Sign Up!</button>
+              <button class="button is-danger is-fullwidth mb-2">
+                <span class="icon">
+                  <i class="fab fa-google"></i>
+                </span>
+                <span>Sign Up With Google</span>
+              </button>
+              <button class="button is-info is-fullwidth">
+                <span class="icon">
+                  <i class="fab fa-facebook-f"></i>
+                </span>
+                <span>Sign Up With Facebook</span>
+              </button>
+            </div>
           </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
-      </div>
-    </div>
-  </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container has-text-centered">
+          <div class="block"><a class="title is-4" href="#">Woof</a></div>
+          <!-- <div class="buttons is-centered"><a class="button" href="#"><img src="placeholder/icons/twitter.svg" alt=""></a><a class="button" href="#"><img src="placeholder/icons/facebook-f.svg" alt=""></a><a class="button" href="#"><img src="placeholder/icons/instagram.svg" alt=""></a><a class="button" href="#"><img src="placeholder/icons/linkedin-in.svg" alt=""></a></div> -->
+          <p class="subtitle is-6">© 2021 Barkle Inc. All right reserved.</p>
+        </div>
+      </footer>
+    </body>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
-
-</body>
-
-</html>
+    </html>
