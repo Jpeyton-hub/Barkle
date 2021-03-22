@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
@@ -19,6 +20,7 @@ module.exports = function(app) {
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
     db.User.create({
+      userName: req.body.name,
       email: req.body.email,
       password: req.body.password
     })
@@ -48,6 +50,43 @@ module.exports = function(app) {
         email: req.user.email,
         id: req.user.id
       });
+    }
+  });
+
+  // Route for adding a new dog to db
+  app.post("/api/adddog", (req, res) => {
+    db.dogs
+      .create({
+        name: req.body.name,
+        breed: req.body.breed,
+        outgoing: req.body.outgoing,
+        fav_activity: req.body.fav,
+        owner_id: req.user.id
+      })
+      .then(data => res.json(data));
+  });
+
+  // Route for adding a new event to db
+  app.post("/api/addevents", (req, res) => {
+    db.events
+      .create({
+        name: req.body.name,
+        date: req.body.date,
+        time: req.body.time,
+        location_id: req.body.location,
+        user_id: req.user.id,
+        dogs_id: req.body.dogs
+      })
+      .then(data => res.json(data));
+  });
+
+  // Route to see all events or a specific one
+  app.get("/api/events/:eventname?", (req, res) => {
+    if (req.params.eventname) {
+      // eslint-disable-next-line prettier/prettier
+      db.findOne({ where: { name: req.params.eventname } }).then(data => res.json(data));
+    } else {
+      db.events.findAll().then(data => res.json(data));
     }
   });
 };
