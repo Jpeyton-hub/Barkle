@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
@@ -50,5 +51,18 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+
+  // Route for adding a new dog to db
+  app.post("/api/adddog", (req, res) => {
+    db.dogs
+      .create({
+        name: req.body.name,
+        breed: req.body.breed,
+        outgoing: req.body.outgoing,
+        fav_activity: req.body.fav,
+        owner_id: req.user.id
+      })
+      .then(data => res.json(data));
   });
 };
