@@ -2,3 +2,32 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+input {
+  font-family: "Oswald", sans-serif;
+}
+.uploader {
+  cursor: pointer !important;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.chooseFile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  padding-left: 200px;
+  margin-right: -200px;
+}
+
+#thumbnail {
+  width: 50%;
+  margin-top: 10px;
+  cursor: pointer;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
