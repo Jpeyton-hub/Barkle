@@ -67,7 +67,7 @@ module.exports = function(app) {
   });
 
   // Route for adding a new event to db
-  app.post("/api/adddog", (req, res) => {
+  app.post("/api/addevents", (req, res) => {
     db.events
       .create({
         name: req.body.name,
@@ -78,5 +78,15 @@ module.exports = function(app) {
         dogs_id: req.body.dogs
       })
       .then(data => res.json(data));
+  });
+
+  // Route to see all events or a specific one
+  app.get("/api/events/:eventname?", (req, res) => {
+    if (req.params.eventname) {
+      // eslint-disable-next-line prettier/prettier
+      db.findOne({ where: { name: req.params.eventname } }).then(data => res.json(data));
+    } else {
+      db.events.findAll().then(data => res.json(data));
+    }
   });
 };
