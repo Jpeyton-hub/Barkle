@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <title>Barkle</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand"><a class="navbar-item" href="#"><img src="./assets/img/barkle-text.png" alt="logo"
+                        width="150"></a><a class="navbar-burger" role="button" aria-label="menu"
+                    aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span
+                        aria-hidden="true"></span></a></div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="#"></a> <a class="navbar-item" href="#"></a> <a class="navbar-item"
+                        href="#"></a>
+                    <a class="navbar-item" href="#"></a>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons"><a class="button is-light" href="#">Log in</a><a class="button is-primary"
+                                href="#">Sign up</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container px-6">
+        <form action="#" method="post" class="">
+            <h2 class="title is-2 mt-6 mb-6 is-1 is-spaced has-text-centered">Create a New Event</h2>
+            <div class="field">
+                <label class="label" for="">Event Name:</label>
+                <div class="control">
+                    <input class="input" type="text" name="field-name" placeholder="What's your event name?"
+                        id="eventName">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="">Date:</label>
+                <div class="control">
+                    <input class="input" type="text" name="field-name" placeholder="dd/mm/yyyy" id="eventDate">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="">Time:</label>
+                <div class="control">
+                    <input class="input" type="text" name="field-name" placeholder="What time?" id="eventTime">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="">Location:</label>
+                <div class="control">
+                    <input class="input" type="text" name="field-name" placeholder="Where is your event?" id="">
+                </div>
+            </div>
+        </form>
+
+        <div class="columns is-centered mt-5">
+            <iframe class="column"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193365.0485956355!2d-112.06057046153597!3d40.776783255858795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87523d9488d131ed%3A0x5b53b7a0484d31ca!2sSalt%20Lake%20City%2C%20UT!5e0!3m2!1sen!2sus!4v1616363226215!5m2!1sen!2sus"
+                width="300" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <button class="button is-fullwidth mt-5 is-primary" type="submit">Submit</button>
+
+    </section>
+
+    <footer class="footer mt-5">
+        <div class="container has-text-centered">
+            <div class="block"><a class="title is-4" href="#">Woof</a></div>
+            <!-- <div class="buttons is-centered"><a class="button" href="#"><img src="placeholder/icons/twitter.svg" alt=""></a><a class="button" href="#"><img src="placeholder/icons/facebook-f.svg" alt=""></a><a class="button" href="#"><img src="placeholder/icons/instagram.svg" alt=""></a><a class="button" href="#"><img src="placeholder/icons/linkedin-in.svg" alt=""></a></div> -->
+            <p class="subtitle is-6">© 2021 Barkle Inc. All right reserved.</p>
+        </div>
+    </footer>
