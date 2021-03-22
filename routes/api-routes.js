@@ -65,4 +65,18 @@ module.exports = function(app) {
       })
       .then(data => res.json(data));
   });
+
+  // Route for adding a new event to db
+  app.post("/api/adddog", (req, res) => {
+    db.events
+      .create({
+        name: req.body.name,
+        date: req.body.date,
+        time: req.body.time,
+        location_id: req.body.location,
+        user_id: req.user.id,
+        dogs_id: req.body.dogs
+      })
+      .then(data => res.json(data));
+  });
 };
