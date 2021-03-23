@@ -24,7 +24,12 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password
     })
-      .then(() => {
+      .then(user => {
+        req.login(user, err => {
+          if (err) {
+            return next(err);
+          }
+        });
         res.redirect("/createProfile");
       })
       .catch(err => {
@@ -56,6 +61,7 @@ module.exports = function(app) {
 
   // Route for adding a new dog to db
   app.post("/api/adddog", (req, res) => {
+    console.log(req.user);
     db.dogs
       .create({
         name: req.body.name,
