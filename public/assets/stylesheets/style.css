@@ -23,7 +23,7 @@ input {
 }
 
 #thumbnail {
-  width: 50%;
+  width: 25%;
   margin-top: 10px;
   cursor: pointer;
   height: auto;

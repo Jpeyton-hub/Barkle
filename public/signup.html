@@ -31,18 +31,23 @@
             <div class="column is-6 is-offset-3">
               <h4 class="title is-spaced is-4 has-text-centered">Don't have an account?</h4>
               <p class="subtitle has-text-centered">Fill Out The Form Below to Join!</p>
-              <form>
+              <form action="/api/signup" method="POST">
                 <div class="field">
                   <div class="control">
-                    <input class="input" type="email" placeholder="Email">
+                    <input class="input" type="email" placeholder="Email" name="email">
                   </div>
                 </div>
                 <div class="field">
                   <div class="control">
-                    <input class="input" type="password" placeholder="Password">
+                    <input class="input" type="text" placeholder="Your Name" name="name">
                   </div>
                 </div>
-              <button class="button mb-2 is-primary is-fullwidth">Submit</button>
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="password" placeholder="Password" name="password">
+                  </div>
+                </div>
+              <button class="button mb-2 is-primary is-fullwidth" type="submit">Submit</button>
               <h4 class="title is-spaced is-4 has-text-centered pt-4">Or</h4>
               <button class="button is-danger is-fullwidth mb-2">
                 <span class="icon">
