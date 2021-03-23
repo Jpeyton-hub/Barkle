@@ -32,20 +32,20 @@
           <div class="columns is-centered">
             <div class="column is-5">
               <h4 class="title is-4 has-text-centered">Sign in to Barkle</h4>
-              <form>
+              <form action="/api/login" method="POST">
                 <div class="field">
                   <div class="control">
-                    <input class="input" type="email" placeholder="Email">
+                    <input class="input" type="email" placeholder="Email" name="email">
                   </div>
                 </div>
                 <div class="field">
                   <div class="control">
-                    <input class="input" type="password" placeholder="Password">
+                    <input class="input" type="password" placeholder="Password" name="password">
                   </div>
                 </div>
                 <div class="field">
                   <div class="control">
-                    <button class="button mb-2 is-primary is-fullwidth">Sign In!</button>
+                    <button class="button mb-2 is-primary is-fullwidth" type="submit">Sign In!</button>
                     <button class="button is-danger is-fullwidth mb-2">
                       <span class="icon">
                         <i class="fab fa-google"></i>
@@ -80,7 +80,6 @@
             
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/login.js"></script>
-  <script src="./assets/js/buttons.js"></script>
 
 </body>
 

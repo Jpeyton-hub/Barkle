@@ -24,7 +24,12 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password
     })
-      .then(() => {
+      .then(user => {
+        req.login(user, err => {
+          if (err) {
+            return next(err);
+          }
+        });
         res.redirect("/createProfile");
       })
       .catch(err => {
@@ -56,6 +61,7 @@ module.exports = function(app) {
 
   // Route for adding a new dog to db
   app.post("/api/adddog", (req, res) => {
+    console.log(req.user);
     db.dogs
       .create({
         name: req.body.name,
@@ -82,12 +88,12 @@ module.exports = function(app) {
   });
 
   // Route to see all events or a specific one
-  app.get("/api/events/:eventname?", (req, res) => {
+  app.get("/api/dash/:eventname?", (req, res) => {
     if (req.params.eventname) {
       // eslint-disable-next-line prettier/prettier
       db.findOne({ where: { name: req.params.eventname } }).then(data => res.json(data));
     } else {
-      db.events.findAll().then(data => res.json(data));
+      res.redirect;
     }
   });
 };
