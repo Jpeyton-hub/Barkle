@@ -82,12 +82,12 @@ module.exports = function(app) {
   });
 
   // Route to see all events or a specific one
-  app.get("/api/events/:eventname?", (req, res) => {
+  app.get("/api/dash/:eventname?", (req, res) => {
     if (req.params.eventname) {
       // eslint-disable-next-line prettier/prettier
       db.findOne({ where: { name: req.params.eventname } }).then(data => res.json(data));
     } else {
-      db.events.findAll().then(data => res.json(data));
+      res.redirect;
     }
   });
 };
