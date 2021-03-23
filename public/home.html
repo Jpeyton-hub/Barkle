@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Barkle</title>
 </head>
 
@@ -30,7 +32,7 @@
         <div class="hero-body">
           <div class="container has-text-centered">
             <h1 class="title is-spaced">Because Your Dog Needs Friends Too!</h1>
-            <h2 class="subtitle">Woof woof bark bark bark.  This is where the about app would go.</h2>
+            <h2 class="subtitle">Woof woof bark bark bark.  This is where the about app would go. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus odio officia accusamus culpa voluptate maiores rerum repellat, cupiditate consectetur mollitia nostrum facilis ipsam impedit deleniti? Quasi hic velit quod provident? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates nam totam laudantium animi, eligendi quia aut repellendus maxime ullam incidunt aliquam itaque deleniti nihil odio iste possimus suscipit corporis nesciunt.</h2>
             <div class="buttons is-centered mb-0"><a class="button is-primary" href="signup.html">Sign up for free</a></div>
             <div class="columns is-centered is-medium">
               <div class="column is-10 has-text-centered"><img class="" src="./assets/img/barkle-logo.png" alt="barkle-logo"></div>
@@ -43,7 +45,21 @@
           <h2 class="title has-text-centered mb-6">What do Barkle users think?</h2>
           <div class="columns">
             <div class="column">
-              <div class="card">
+              <div class="card mb-3" data-aos="fade-up-right">
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-64x64"><img class="is-rounded" src="./assets/img/Riley.jpg" alt=""></figure>
+                    </div>
+                    <div class="media-content">
+                      <h5 class="title is-5">Mr. Dog Owner</h5>
+                      <p class="subtitle">SLC, UT</p>
+                    </div>
+                  </div>
+                  <div class="content">Barkle changed my life, I will never be the same.  I used to be a lonely dog owner and now I have more dog friends than I could have ever imagined.</div>
+                </div>
+              </div>
+              <div class="card mb-3" data-aos="fade-up-right">
                 <div class="card-content">
                   <div class="media">
                     <div class="media-left">
@@ -59,7 +75,21 @@
               </div>
             </div>
             <div class="column">
-              <div class="card">
+              <div class="card mb-3" data-aos="fade-up-left">
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-64x64"><img class="is-rounded" src="./assets/img/Riley.jpg" alt=""></figure>
+                    </div>
+                    <div class="media-content">
+                      <h5 class="title is-5">Mrs. Dog Owner</h5>
+                      <p class="subtitle">SLC, UT</p>
+                    </div>
+                  </div>
+                  <div class="content">My dog used to stare into the void, he was the loneliest boy there ever was.  Barkle made my dog realize there is more to life than just staring out the window and hoping for dog friends.</div>
+                </div>
+              </div>
+              <div class="card mb-3" data-aos="fade-up-left">
                 <div class="card-content">
                   <div class="media">
                     <div class="media-left">
@@ -88,6 +118,7 @@
         </div>
       </footer>
       <script src="./assets/js/buttons.js"></script>
+      <script>AOS.init()</script>
 </body>
 
 </html>
