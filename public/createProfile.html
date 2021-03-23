@@ -61,27 +61,27 @@
 
   <section class="section">
     <div class="column is-6 is-offset-3">
-    <form action="#" method="post" class=""><div class="field">
+    <form action="/api/adddog" method="POST" class="" id="create-form"><div class="field">
       <label class="label" for="">Dog Name:</label>
       <div class="control">
-        <input class="input" type="text" name="field-name" placeholder="Your dog's name" id="">
+        <input class="input" type="text" placeholder="Your dog's name" id="dogName" name="name">
       </div>
       </div><div class="field">
       <label class="label" for="">Dog Breed:</label>
       <div class="control">
-        <input class="input" type="text" name="field-name" placeholder="Your dog's breed " id="">
+        <input class="input" type="text" placeholder="Your dog's breed " id="breed" name="breed">
       </div>
       </div><div class="field">
       <label class="label" for="">Favorite Activities:</label>
-      <div class="control"><textarea class="textarea" name="field-name" rows="3" placeholder="Tell us your dog's favorite activities" id=""></textarea></div>
+      <div class="control"><textarea class="textarea" rows="3" placeholder="Tell us your dog's favorite activities" name="fav_activity"></textarea></div>
       </div><div class="field">
       <div class="control">
         <label class="radio" for="">Traits:
-          <input class="form-check-input" type="radio" name="radio-name" value="option 1" checked="">
+          <input class="form-check-input" type="radio" name="outgoing" value="false" checked="">
           <span class="ml-1">Shy</span>
         </label>
         <label class="radio" for="">
-          <input class="form-check-input" type="radio" name="radio-name" value="option 2">
+          <input class="form-check-input" type="radio" name="outgoing" value="true">
           <span class="ml-1">Outgoing</span>
         </label>
       </div>
