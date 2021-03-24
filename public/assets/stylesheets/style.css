@@ -3,6 +3,13 @@ form.login {
   margin-top: 50px;
 }
 
+body {
+  margin:auto auto;
+}
+.navbar {
+  background-color: #FAFAFA;
+}
+
 input {
   font-family: "Oswald", sans-serif;
 }
