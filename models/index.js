@@ -1,5 +1,10 @@
+
+/* eslint-disable no-var */
+/* eslint-disable vars-on-top */
+=======
 /* eslint-disable vars-on-top */
 /* eslint-disable no-var */
+
 /* eslint-disable no-unused-vars */
 "use strict";
 
