@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/stylesheets/style.css">
     <title>Barkle</title>
 </head>
 
@@ -35,7 +36,7 @@
     <section class="section">
         <div class="column is-6 is-offset-3">
 
-            <form action="#" method="post" class="">
+            <form action="/api/addevents" method="POST" class="">
                 <h2 class="title is-2 mt-6 mb-6 is-1 is-spaced has-text-centered">Create a New Event</h2>
                 <div class="field">
                     <label class="label" for="">Event Name:</label>
@@ -59,11 +60,11 @@
                 <div class="field">
                     <label class="label" for="">Location:</label>
                     <div class="control">
-                        <input class="input" type="text" name="field-name" placeholder="Where is your event?"
+                        <input class="input my-5" type="text" name="field-name" placeholder="Where is your event?"
                         id="eventLocation">
-                        <button class="button mt-5 is-primary" type="submit">Search Near Me</button>
                         <input class="input" type="text" name="field-name" placeholder="Enter your City or Zip Code"
                         id="currentLocation">
+                        <button class="button my-5 is-primary is-fullwidth" type="submit">Search Near Me</button>
                     </div>
                 </div>
             </form>
@@ -75,41 +76,6 @@
             </div>
             <button class="button is-fullwidth mt-5 is-primary" type="submit">Submit</button>
         </div>
-        <form action="/api/addevents" method="POST" class="">
-            <h2 class="title is-2 mt-6 mb-6 is-1 is-spaced has-text-centered">Create a New Event</h2>
-            <div class="field">
-                <label class="label" for="">Event Name:</label>
-                <div class="control">
-                    <input class="input" type="text" name="name" placeholder="What's your event name?"
-                        id="eventName">
-                </div>
-            </div>
-            <div class="field">
-                <label class="label" for="">Date:</label>
-                <div class="control">
-                    <input class="input" type="text" name="date" placeholder="dd/mm/yyyy" id="eventDate">
-                </div>
-            </div>
-            <div class="field">
-                <label class="label" for="">Time:</label>
-                <div class="control">
-                    <input class="input" type="text" name="time" placeholder="What time?" id="eventTime">
-                </div>
-            </div>
-            <div class="field">
-                <label class="label" for="">Location:</label>
-                <div class="control">
-                    <input class="input" type="text" name="location_id" placeholder="Where is your event?" id="">
-                </div>
-            </div>
-            <div class="columns is-centered mt-5">
-                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1OU3eznSB9iD_9CawW00PkgoFvPxxiO4l" width="640" height="480" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <button class="button is-fullwidth mt-5 is-primary" type="submit">Submit</button>
-        </form>
-        
-    </div>
-    </section>
 
     <footer class="footer mt-5">
         <div class="container has-text-centered">
