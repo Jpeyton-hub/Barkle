@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="navbar-brand"><a class="navbar-item" href="#"><img src="./assets/img/barkle-text.png" alt="logo"
+            <div class="navbar-brand"><a class="navbar-item" href="home.html"><img src="./assets/img/barkle-text.png" alt="logo"
                         width="150"></a><a class="navbar-burger" role="button" aria-label="menu"
                     aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span
                         aria-hidden="true"></span></a></div>
@@ -24,8 +24,8 @@
                 </div>
                 <div class="navbar-end">
                     <div class="navbar-item">
-                        <div class="buttons"><a class="button is-light" href="#">Log in</a><a class="button is-primary"
-                                href="#">Sign up</a></div>
+                        <div class="buttons"><a class="button is-light" href="login.html">Log in</a><a class="button is-primary"
+                                href="signup.html">Sign up</a></div>
                     </div>
                 </div>
             </div>
@@ -34,6 +34,7 @@
 
     <section class="section">
         <div class="column is-6 is-offset-3">
+
             <form action="#" method="post" class="">
                 <h2 class="title is-2 mt-6 mb-6 is-1 is-spaced has-text-centered">Create a New Event</h2>
                 <div class="field">
@@ -74,6 +75,40 @@
             </div>
             <button class="button is-fullwidth mt-5 is-primary" type="submit">Submit</button>
         </div>
+        <form action="/api/addevents" method="POST" class="">
+            <h2 class="title is-2 mt-6 mb-6 is-1 is-spaced has-text-centered">Create a New Event</h2>
+            <div class="field">
+                <label class="label" for="">Event Name:</label>
+                <div class="control">
+                    <input class="input" type="text" name="name" placeholder="What's your event name?"
+                        id="eventName">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="">Date:</label>
+                <div class="control">
+                    <input class="input" type="text" name="date" placeholder="dd/mm/yyyy" id="eventDate">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="">Time:</label>
+                <div class="control">
+                    <input class="input" type="text" name="time" placeholder="What time?" id="eventTime">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="">Location:</label>
+                <div class="control">
+                    <input class="input" type="text" name="location_id" placeholder="Where is your event?" id="">
+                </div>
+            </div>
+            <div class="columns is-centered mt-5">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1OU3eznSB9iD_9CawW00PkgoFvPxxiO4l" width="640" height="480" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <button class="button is-fullwidth mt-5 is-primary" type="submit">Submit</button>
+        </form>
+        
+    </div>
     </section>
 
     <footer class="footer mt-5">

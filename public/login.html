@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar">
         <div class="container">
-          <div class="navbar-brand"><a class="navbar-item" href="#"><img src="./assets/img/barkle-text.png" alt="logo" width="150"></a><a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
+          <div class="navbar-brand"><a class="navbar-item" href="home.html"><img src="./assets/img/barkle-text.png" alt="logo" width="150"></a><a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
           <div class="navbar-menu">
             <div class="navbar-start">
               <a class="navbar-item" href="#"></a>            <a class="navbar-item" href="#"></a>            <a class="navbar-item" href="#"></a>
@@ -32,20 +32,20 @@
           <div class="columns is-centered">
             <div class="column is-5">
               <h4 class="title is-4 has-text-centered">Sign in to Barkle</h4>
-              <form>
+              <form action="/api/login" method="POST">
                 <div class="field">
                   <div class="control">
-                    <input class="input" type="email" placeholder="Email">
+                    <input class="input" type="email" placeholder="Email" name="email">
                   </div>
                 </div>
                 <div class="field">
                   <div class="control">
-                    <input class="input" type="password" placeholder="Password">
+                    <input class="input" type="password" placeholder="Password" name="password">
                   </div>
                 </div>
                 <div class="field">
                   <div class="control">
-                    <button class="button mb-2 is-primary is-fullwidth">Sign In!</button>
+                    <button class="button mb-2 is-primary is-fullwidth" type="submit">Sign In!</button>
                     <button class="button is-danger is-fullwidth mb-2">
                       <span class="icon">
                         <i class="fab fa-google"></i>
@@ -65,7 +65,7 @@
             <div class="column is-5 is-offset-1">
               <h4 class="title is-spaced is-4 has-text-centered">Don't have an account?</h4>
               <p class="subtitle">No account?  No Problem!  Click below to join the Barkle community.</p>
-              <button class="button mb-2 is-primary is-fullwidth">Sign Up!</button>
+              <a class="button mb-2 is-primary is-fullwidth" href="signup.html">Sign Up!</a>
             </section>
             <footer class="footer">
               <div class="container has-text-centered">
