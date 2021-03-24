@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Dog Map in SLC</name>
+    <description/>
+    <Style id="icon-1596-558B2F-nodesc-normal">
+      <IconStyle>
+        <color>ff2f8b55</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1596-558B2F-nodesc-highlight">
+      <IconStyle>
+        <color>ff2f8b55</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1596-558B2F-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1596-558B2F-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1596-558B2F-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1596-FBC02D-nodesc-normal">
+      <IconStyle>
+        <color>ff2dc0fb</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1596-FBC02D-nodesc-highlight">
+      <IconStyle>
+        <color>ff2dc0fb</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1596-FBC02D-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1596-FBC02D-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1596-FBC02D-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1778-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1778-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1778-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1778-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1778-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Dog Parks</name>
+      <Placemark>
+        <name>Sandy City Dog Park</name>
+        <styleUrl>#icon-1778-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.8828988,40.5697403,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Draper Dayland Dog Park</name>
+        <styleUrl>#icon-1778-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.8822011,40.5072697,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Daybreak Dog Park</name>
+        <styleUrl>#icon-1778-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -112.0138694,40.5501893,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Herman Franks Dog Park</name>
+        <styleUrl>#icon-1778-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.8689895,40.7401389,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>South Salt Lake Lions Park</name>
+        <styleUrl>#icon-1778-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.8811722,40.7177968,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lindsey Gardens Park</name>
+        <styleUrl>#icon-1778-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.864252,40.7785047,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Pioneer Dog Park</name>
+        <styleUrl>#icon-1778-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.9003647,40.7612816,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Galena Hills Dog Park</name>
+        <styleUrl>#icon-1778-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.9096374,40.5253869,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Millrace Off-Leash Dog Park</name>
+        <styleUrl>#icon-1778-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.9243792,40.6541602,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>West Jordan Off-Leash Dog Park</name>
+        <styleUrl>#icon-1778-0288D1-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -112.0326103,40.5906339,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name><![CDATA[Hikes (Off & On Leash)]]></name>
+      <Placemark>
+        <name>Bear Canyon Suspension Bridge Trailhead</name>
+        <styleUrl>#icon-1596-FBC02D-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.8333862,40.5221816,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Deer Ridge Offleash Dog trailhead</name>
+        <styleUrl>#icon-1596-558B2F-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.850138,40.474485,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Parleys Historic Nature Park</name>
+        <styleUrl>#icon-1596-FBC02D-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.8077027,40.7108063,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Neffs Canyon</name>
+        <styleUrl>#icon-1596-FBC02D-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.7751052,40.6761528,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ferguson Canyon Trail Head</name>
+        <styleUrl>#icon-1596-FBC02D-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.7881691,40.6103538,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bell Canyon Boulders Trailhead</name>
+        <styleUrl>#icon-1596-FBC02D-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.8037026,40.5653086,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Ghost Falls Trail Head</name>
+        <styleUrl>#icon-1596-FBC02D-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.8172155,40.4944747,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Red Rock Trailhead</name>
+        <styleUrl>#icon-1596-FBC02D-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.8560016,40.4883906,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lower Bell Canyon Reservoir</name>
+        <styleUrl>#icon-1596-FBC02D-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.7966038,40.5651887,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cherry Canyon Logging Trail</name>
+        <styleUrl>#icon-1596-FBC02D-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -111.8288433,40.5211663,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
