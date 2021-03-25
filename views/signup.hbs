@@ -1,0 +1,54 @@
+ <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand"><a class="navbar-item" href="home.html"><img src="./assets/img/barkle-text.png" alt="logo" width="150"></a><a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
+          <div class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item" href="#"></a>            <a class="navbar-item" href="#"></a>            <a class="navbar-item" href="#"></a>
+              <a class="navbar-item" href="#"></a>
+            </div>
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="buttons"><a class="button is-light" href="login.html">Log in</a><a class="button is-primary" href="signup.html">Sign up</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section class="section">
+            <div class="column is-6 is-offset-3">
+              <h4 class="title is-spaced is-4 has-text-centered">Don't have an account?</h4>
+              <p class="subtitle has-text-centered">Fill Out The Form Below to Join!</p>
+              <form action="/api/signup" method="POST">
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="email" placeholder="Email" name="email">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Your Name" name="name">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control">
+                    <input class="input" type="password" placeholder="Password" name="password">
+                  </div>
+                </div>
+              <button class="button mb-2 is-primary is-fullwidth" type="submit">Submit</button>
+              <h4 class="title is-spaced is-4 has-text-centered pt-4">Or</h4>
+              <button class="button is-danger is-fullwidth mb-2">
+                <span class="icon">
+                  <i class="fab fa-google"></i>
+                </span>
+                <span>Sign Up With Google</span>
+              </button>
+              <button class="button is-info is-fullwidth">
+                <span class="icon">
+                  <i class="fab fa-facebook-f"></i>
+                </span>
+                <span>Sign Up With Facebook</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
