@@ -9,6 +9,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link rel="stylesheet" href="./assets/stylesheets/style.css">
+  <script src="https://kit.fontawesome.com/b3ac2c6d7a.js" crossorigin="anonymous"></script>
   <title>Barkle</title>
 </head>
 
@@ -29,5 +30,24 @@
   </footer>
   <script src="./assets/js/buttons.js"></script>
 <script>AOS.init()</script>
+<script>document.addEventListener('DOMContentLoaded', () => {
+
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  if ($navbarBurgers.length > 0) {
+
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+});</script>
 </body>
 </html>
