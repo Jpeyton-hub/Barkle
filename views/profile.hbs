@@ -19,14 +19,17 @@
             </div>
         </div>
     </nav>
+
+    
     <section class="section">
+        {{#each dogs}}
         <div class="container py-4">
             <h2 class="title has-text-centered mb-6">Your Barkle Profile</h2>
             <div class="image columns is-vcentered">
                 <div class="column is-6"><img class="image is-rounded" src="./assets/img/Pup.PNG" alt=""></div>
                 <div class="column is-6">
-                    <h4 class="title is-spaced is-4">Name:</h4>
-                    <p class="subtitle">Favorite Activities Go Here</p>
+                    <h4 class="title is-spaced is-4">{{name}}</h4>
+                    <p class="subtitle">{{fav_activity}}</p>
                     <div>
                         <div class="media">
                             <div class="media-left">
@@ -36,7 +39,7 @@
                             </div>
                             <div class="media-content">
                                 <div class="content">
-                                    <p>Breed Goes Here</p>
+                                    <p>{{breed}}</p>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +51,7 @@
                             </div>
                             <div class="media-content">
                                 <div class="content">
-                                    <p>Shy or Outgoing?</p>
+                                    <p>{{outgoing}}</p>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +59,8 @@
                 </div>
             </div>
             <div class="column is-6 is-offset-3">
-                <div class="buttons is-centered my-4"><a class="button is-primary" href="createProfile.html">Add Another
+                <div class="buttons is-centered my-4"><a class="button is-primary" href="/createProfile">Add Another
                         Dog</a></div>
             </div>
+            {{/each}}
     </section>
