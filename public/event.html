@@ -41,41 +41,41 @@
                 <div class="field">
                     <label class="label" for="">Event Name:</label>
                     <div class="control">
-                        <input class="input" type="text" name="field-name" placeholder="What's your event name?"
+                        <input class="input" type="text" name="name" placeholder="What's your event name?"
                             id="eventName">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label" for="">Date:</label>
                     <div class="control">
-                        <input class="input" type="text" name="field-name" placeholder="dd/mm/yyyy" id="eventDate">
+                        <input class="input" type="text" name="date" placeholder="dd/mm/yyyy" id="eventDate">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label" for="">Time:</label>
                     <div class="control">
-                        <input class="input" type="text" name="field-name" placeholder="What time?" id="eventTime">
+                        <input class="input" type="text" name="time" placeholder="What time?" id="eventTime">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label" for="">Location:</label>
                     <div class="control">
-                        <input class="input my-5" type="text" name="field-name" placeholder="Where is your event?"
-                        id="eventLocation">
-                        <input class="input" type="text" name="field-name" placeholder="Enter your City or Zip Code"
-                        id="currentLocation">
-                        <button class="button search-button my-5 is-primary is-fullwidth" type="submit">Search Near Me</button>
+
+                        <input class="input" type="text" name="location_id" placeholder="Where is your event?" id="">
+                        <button class="search button mt-5 is-primary" type="submit">Search Near Me</button>
+                            <input class="input" type="text" name="field-name" placeholder="Enter your City or Zip Code"
+                            id="currentLocation">
                     </div>
                 </div>
-            </form>
-            <div class="columns is-centered mt-5">
-                <div id="map">
-                    <iframe class="mapImg" width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/search?key=AIzaSyD27JXp5yaMt6agv0okwfcdVllql4TisXs&q=dog+friendly+near+Salt+Lake+County"></iframe>
+                <div class="columns is-centered mt-5">
+                    <iframe class= "mapImg" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyD27JXp5yaMt6agv0okwfcdVllql4TisXs&q=dog+friendly+near+Salt+Lake+County"" width="640" height="480" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-
-            </div>
-            <button class="button is-fullwidth mt-5 is-primary" type="submit">Submit</button>
-        </div>
+                <button class="button is-fullwidth mt-5 is-primary" type="submit">Submit</button>
+            </form>
+        
+        
+    </div>
+    </section>
 
     <footer class="footer mt-5">
         <div class="container has-text-centered">
@@ -92,10 +92,9 @@
     <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"></script>
     <script>
-$(".search-button").on("click",function(event){
+$(".search").on("click",function(event){
     event.preventDefault();
     var searchCriteria = $("#currentLocation").val().trim();
-    // $("#eventLocation").val.trim();
     console.log(searchCriteria);
     $(".mapImg").attr("src", "https://www.google.com/maps/embed/v1/search?key=AIzaSyD27JXp5yaMt6agv0okwfcdVllql4TisXs&q=dog+friendly+near+" + searchCriteria);
 })
