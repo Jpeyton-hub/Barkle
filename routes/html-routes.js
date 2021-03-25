@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
+const db = require("../models");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -43,7 +45,11 @@ module.exports = function(app) {
           owner_id: req.user.id
         }
       })
-      .then(dogs => res.render("profile", dogs));
+
+      .then(dogs => {
+        console.log(dogs);
+        res.render("profile", { dogs });
+      });
   });
 
   // Here we've add our isAuthenticated middleware to this route.

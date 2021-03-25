@@ -1,6 +1,6 @@
 <nav class="navbar">
         <div class="container">
-            <div class="navbar-brand"><a class="navbar-item" href="#"><img src="./assets/img/barkle-text.png" alt="logo"
+            <div class="navbar-brand"><a class="navbar-item" href="/"><img src="./assets/img/barkle-text.png" alt="logo"
                         width="150"></a><a class="navbar-burger" role="button" aria-label="menu"
                     aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span
                         aria-hidden="true"></span></a></div>
@@ -28,8 +28,8 @@
             <div class="image columns is-vcentered">
                 <div class="column is-6"><img class="image is-rounded" src="./assets/img/Pup.PNG" alt=""></div>
                 <div class="column is-6">
-                    <h4 class="title is-spaced is-4">{{name}}</h4>
-                    <p class="subtitle">{{fav_activity}}</p>
+                    <h4 class="title is-spaced is-4">{{dataValues.name}}</h4>
+                    <p class="subtitle">Favorite Activity: {{dataValues.fav_activity}}</p>
                     <div>
                         <div class="media">
                             <div class="media-left">
@@ -39,7 +39,7 @@
                             </div>
                             <div class="media-content">
                                 <div class="content">
-                                    <p>{{breed}}</p>
+                                    <p>Breed: {{dataValues.breed}}</p>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="media-content">
                                 <div class="content">
-                                    <p>{{outgoing}}</p>
+                                    <p>Outgoing: {{dataValues.outgoing}}</p>
                                 </div>
                             </div>
                         </div>

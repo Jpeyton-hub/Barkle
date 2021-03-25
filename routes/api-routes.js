@@ -70,7 +70,7 @@ module.exports = function(app) {
         fav_activity: req.body.fav,
         owner_id: req.user.id
       })
-      .then(data => res.json(data));
+      .then(res.redirect("/profile"));
   });
 
   // Route for adding a new event to db
