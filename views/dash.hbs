@@ -19,25 +19,26 @@
 
       <h2 class="title is-2 mt-6 mb-6 is-1 is-spaced has-text-centered">Event Dashboard</h2>
       <section class="section">
+        {{#each events}}
         <div class="container has-text-centered py-4">
           <h2 class="title mb-6">Upcoming Barkle Events</h2>
           <div class="columns">
             <div class="column">
               <div class="card">
                 <div class="card-content">
-                  <h3 class="title is-4">Event Name</h3>
+                  <h3 class="title is-4">{{dataValues.name}}</h3>
                   <button class="button is-danger is-fullwidth mb-2">
                     <span class="icon">
                       <i class="fa fa-map-marker"></i>
                     </span>
-                    <span>Location Name</span>
+                    <span>{{dataValues.location_id}}</span>
                   </button>
-                  <h4 class="title is-spaced is-5">Date Goes Here <small>Time Goes Here</small></h4>
+                  <h4 class="title is-spaced is-5">{{dataValues.date}}<small>{{dataValues.time}}</small></h4>
                   <button class="button is-primary is-outlined" type="button">Attending</button>
                 </div>
               </div>
             </div>
-            <div class="column">
+            {{!-- <div class="column">
               <div class="card">
                 <div class="card-content">
                   <h3 class="title is-4">Event Name</h3>
@@ -66,7 +67,8 @@
                   <button class="button is-primary is-outlined" type="button">Attending</button>
                 </div>
               </div>
-            </div>
+            </div> --}}
           </div>
         </div>
+        {{/each}}
       </section>
