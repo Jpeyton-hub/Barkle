@@ -84,7 +84,7 @@ module.exports = function(app) {
         user_id: req.user.id,
         dogs_id: req.body.dogs
       })
-      .then(data => res.json(data));
+      .then(res.redirect("/dash"));
   });
 
   // Route to see all events or a specific one
