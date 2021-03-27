@@ -88,7 +88,7 @@ module.exports = function(app) {
         })
         .then(res.redirect("/dashboard"))
         .catch(() => {
-          res.json({ message: "Make sure you are logged in" });
+          // res.json({ message: "Make sure you are logged in" });
         });
     } else {
       res.redirect("/login");

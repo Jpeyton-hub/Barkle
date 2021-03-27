@@ -11,6 +11,8 @@
   "extends": "prettier",
   "plugins": ["prettier"],
   "rules": {
+    "prefer-spread": 1,
+    "prefer-object-spread": true,
     "array-callback-return": "error",
     "camelcase": "error",
     "curly": "error",
