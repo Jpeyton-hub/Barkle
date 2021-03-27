@@ -27,17 +27,10 @@ module.exports = function(app) {
   });
 
   app.get("/dashboard", (req, res) => {
-    db.events
-      .findAll({
-        where: {
-          user_id: req.user.id
-        }
-      })
-
-      .then(events => {
-        console.log(events);
-        res.render("dash", { events });
-      });
+    db.events.findAll({}).then(events => {
+      console.log(events);
+      res.render("dash", { events });
+    });
   });
 
   app.get("/events", (req, res) => {
