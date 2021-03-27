@@ -19,6 +19,7 @@
   </div>
 </nav>
 
+<<<<<<< HEAD
 <h2 class="title is-2 mt-6 mb-6 is-1 is-spaced has-text-centered">Event Dashboard</h2>
 <hr class="content-divider mb-5">
 <section class="section">
@@ -40,6 +41,68 @@
                 <span>{{dataValues.location_id}}</span>
               </button>
               {{!--
+=======
+      <h2 class="title is-2 mt-6 mb-6 is-1 is-spaced has-text-centered">Event Dashboard</h2>
+      <hr class="content-divider mb-5">
+      <section class="section">
+        <div class="container has-text-centered py-4">
+          <h3 class="title is-4 mb-6">Upcoming Barkle Events</h3>
+          <hr class="content-divider mb-5">
+          <div class="columns is-justify-content-center">
+            <div class="column is-9">
+              {{#each events}}
+                <div class="card mb-3 has-background-grey-lighter" data-aos="fade-up" data-aos-duration="1200">
+                  <div class="card-content">
+                    <h3 class="title is-4">{{dataValues.name}}</h3>
+                    <p class="mb-3">{{dataValues.event_description}}</p>
+                    {{!-- <div class="column is-half"> --}}
+                      <button class="button is-danger is-medium px-6 mb-2">
+                        <span class="icon">
+                          <i class="fa fa-map-marker"></i>
+                        </span>
+                        <span>{{dataValues.location_id}}</span>
+                      </button>
+                    {{!-- </div> --}}
+                    <h4 class="title is-spaced is-5">When: {{dataValues.date}}&nbsp;at <small>{{dataValues.time}}</small></h4>
+                    <div class="buttons is-spaced is-justify-content-center">
+                      <button class="button is-primary my-2 py-2" type="button">Attending</button>
+                      {{#if owner}}<a class="button is-danger is-outlined my-2 py-2" type="button" href="/api/delete/{{dataValues.id}}">Delete event</a>{{/if}}
+                    </div>
+                    
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+            {{!-- <div class="column">
+              <div class="card">
+                <div class="card-content">
+                  <h3 class="title is-4">Event Name</h3>
+                  <button class="button is-danger is-fullwidth mb-2">
+                    <span class="icon">
+                      <i class="fa fa-map-marker"></i>
+                    </span>
+                    <span>Location Name</span>
+                  </button>
+                  <h4 class="title is-spaced is-5">Date Goes Here <small>Time Goes Here</small></h4>
+                  <button class="button is-primary is-outlined" type="button">Attending</button>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
+                <div class="card-content">
+                  <h3 class="title is-4">Event Name</h3>
+                  <button class="button is-danger is-fullwidth mb-2">
+                    <span class="icon">
+                      <i class="fa fa-map-marker"></i>
+                    </span>
+                    <span>Location Name</span>
+                  </button>
+                  <h4 class="title is-spaced is-5">Date Goes Here <small>Time Goes Here</small></h4>
+                  <button class="button is-primary is-outlined" type="button">Attending</button>
+                </div>
+              </div>
+>>>>>>> c646f20ff13b82dec45e0ed0c848313f802d25fd
             </div> --}}
             <h4 class="title is-spaced is-5">When: {{dataValues.date}}&nbsp;at <small>{{dataValues.time}}</small></h4>
             <button class="button is-primary" type="button">Attending</button>
