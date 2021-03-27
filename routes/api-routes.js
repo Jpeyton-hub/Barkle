@@ -75,38 +75,44 @@ module.exports = function(app) {
 
   // Route for adding a new event to db
   app.post("/api/addevents", (req, res) => {
-    db.events
-      .create({
-        name: req.body.name,
-        date: req.body.date,
-        time: req.body.time,
-        event_description: req.body.event_description,
-        location_id: req.body.location_id,
-        user_id: req.user.id,
-        dogs_id: req.body.dogs
-      })
-      .then(res.redirect("/dashboard"))
-      .catch(() => {
-        res.json({ message: "Make sure you are logged in" });
-      });
+    if (req.user) {
+      db.events
+        .create({
+          name: req.body.name,
+          date: req.body.date,
+          time: req.body.time,
+          event_description: req.body.event_description,
+          location_id: req.body.location_id,
+          user_id: req.user.id,
+          dogs_id: req.body.dogs
+        })
+        .then(res.redirect("/dashboard"))
+        .catch(() => {
+          res.json({ message: "Make sure you are logged in" });
+        });
+    } else {
+      res.redirect("/login");
+    }
   });
 
   // Route to see all events or a specific one
   app.get("/api/dash/:eventname?", (req, res) => {
     if (req.params.eventname) {
       // eslint-disable-next-line prettier/prettier
-      db.events.findOne({ where: { name: req.params.eventname } }).then(data => res.json(data));
+      db.events.findAll({ where: { name: req.params.eventname } }).then(events => res.render("dash", { events }));
     } else {
-      res.redirect;
+      db.events.findall().then(events => res.render("dash", { events }));
     }
   });
 
   // Route to delete events
   app.get("/api/delete/:eventid", (req, res) => {
     if (req.user.id === req.body.id) {
-      db.events.destroy({ where: { id: req.params.eventid } }).then();
+      db.events
+        .destroy({ where: { id: req.params.eventid } })
+        .then(res.redirect("/dashboard"));
     } else {
-      res.redirect;
+      res.send("YOU MUST BE THE EVENT OWNER IN ORDER TO DELETE");
     }
   });
 };
