@@ -108,9 +108,11 @@ module.exports = function(app) {
   // Route to delete events
   app.get("/api/delete/:eventid", (req, res) => {
     if (req.user.id === req.body.id) {
-      db.events.destroy({ where: { id: req.params.eventid } }).then();
+      db.events
+        .destroy({ where: { id: req.params.eventid } })
+        .then(res.redirect("/dashboard"));
     } else {
-      res.redirect;
+      res.send("YOU MUST BE THE EVENT OWNER IN ORDER TO DELETE");
     }
   });
 };
