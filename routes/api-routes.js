@@ -84,7 +84,10 @@ module.exports = function(app) {
         user_id: req.user.id,
         dogs_id: req.body.dogs
       })
-      .then(res.redirect("/dash"));
+      .then(res.redirect("/dashboard"))
+      .catch(() => {
+        res.json({ message: "Make sure you are logged in" });
+      });
   });
 
   // Route to see all events or a specific one
