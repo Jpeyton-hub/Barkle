@@ -22,7 +22,9 @@ hr {
   transition: all 0.2s ease-in-out;
 }
 
-
+.button {
+  transition: all 0.2s ease-in-out;
+}
 
 input {
   font-family: "Oswald", sans-serif;
