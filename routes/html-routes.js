@@ -3,6 +3,8 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
 const db = require("../models");
+const moment = require("moment");
+const { Op } = require("sequelize");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -24,10 +26,19 @@ module.exports = function(app) {
   });
 
   app.get("/dashboard", (req, res) => {
-    db.events.findAll({}).then(events => {
-      console.log(events);
-      res.render("dash", { events });
-    });
+    db.events
+      .findAll({ where: { date: { [Op.gte]: moment().toDate() } } })
+      .then(events => {
+        console.log(events);
+
+        res.render("dash", {
+          events: events.map(event => {
+            return req.user.id === event.dataValues.user_id
+              ? { ...event, owner: true }
+              : { ...event, owner: false };
+          })
+        });
+      });
   });
 
   app.get("/events", (req, res) => {

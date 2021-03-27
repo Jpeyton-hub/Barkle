@@ -40,7 +40,7 @@
                     {{!-- </div> --}}
                     <h4 class="title is-spaced is-5">When: {{dataValues.date}}&nbsp;at <small>{{dataValues.time}}</small></h4>
                     <button class="button is-primary" type="button">Attending</button>
-                    <a class="button is-danger is-outlined" type="button" href="/api/delete/{{dataValues.id}}">Delete event</a>
+                    {{#if owner}}<a class="button is-danger is-outlined" type="button" href="/api/delete/{{dataValues.id}}">Delete event</a>{{/if}}
                   </div>
                 </div>
               {{/each}}
