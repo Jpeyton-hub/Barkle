@@ -9,10 +9,11 @@ module.exports = function(app) {
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
-    res.json({
-      email: req.user.email,
-      id: req.user.id
-    });
+    if (!req.user) {
+      res.redirect("/signup");
+    } else {
+      res.redirect("/profile");
+    }
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -61,7 +62,6 @@ module.exports = function(app) {
 
   // Route for adding a new dog to db
   app.post("/api/adddog", (req, res) => {
-    console.log(req.user);
     db.dogs
       .create({
         name: req.body.name,
@@ -80,7 +80,7 @@ module.exports = function(app) {
         name: req.body.name,
         date: req.body.date,
         time: req.body.time,
-        event_description: req.body.description
+        event_description: req.body.description,
         location_id: req.body.location,
         user_id: req.user.id,
         dogs_id: req.body.dogs
@@ -95,7 +95,16 @@ module.exports = function(app) {
   app.get("/api/dash/:eventname?", (req, res) => {
     if (req.params.eventname) {
       // eslint-disable-next-line prettier/prettier
-      db.findOne({ where: { name: req.params.eventname } }).then(data => res.json(data));
+      db.events.findOne({ where: { name: req.params.eventname } }).then(data => res.json(data));
+    } else {
+      res.redirect;
+    }
+  });
+
+  // Route to delete events
+  app.get("/api/delete/:eventid", (req, res) => {
+    if (req.user.id === req.body.id) {
+      db.events.destroy({ where: { id: req.params.eventid } }).then();
     } else {
       res.redirect;
     }
