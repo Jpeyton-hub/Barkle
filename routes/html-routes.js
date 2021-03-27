@@ -16,9 +16,6 @@ module.exports = function(app) {
 
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
-    if (req.user) {
-      res.render("signup");
-    }
     res.render("login");
   });
 
@@ -52,6 +49,9 @@ module.exports = function(app) {
       .then(dogs => {
         console.log(dogs);
         res.render("profile", { dogs });
+      })
+      .catch(() => {
+        res.redirect("/createProfile");
       });
   });
 
