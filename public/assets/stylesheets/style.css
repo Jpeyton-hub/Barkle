@@ -4,11 +4,25 @@ form.login {
 }
 
 body {
-  margin:auto auto;
+  margin:auto auto; 
 }
+
 .navbar {
   background-color: #FAFAFA;
 }
+
+hr {
+  background-color: #4573B9;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.button:hover, .text-logo:hover {
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+
 
 input {
   font-family: "Oswald", sans-serif;
@@ -38,3 +52,6 @@ input {
   margin-left: auto;
   margin-right: auto;
 }
+
+
+
