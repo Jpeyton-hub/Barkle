@@ -81,8 +81,8 @@ module.exports = function(app) {
           name: req.body.name,
           date: req.body.date,
           time: req.body.time,
-          event_description: req.body.description,
-          location_id: req.body.location,
+          event_description: req.body.event_description,
+          location_id: req.body.location_id,
           user_id: req.user.id,
           dogs_id: req.body.dogs
         })
