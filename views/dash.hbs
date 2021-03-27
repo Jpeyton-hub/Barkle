@@ -23,8 +23,8 @@
         <div class="container has-text-centered py-4">
           <h3 class="title is-4 mb-6">Upcoming Barkle Events</h3>
           <hr class="content-divider mb-5">
-          <div class="columns">
-            <div class="column">
+          <div class="columns is-justify-content-center">
+            <div class="column is-9">
               {{#each events}}
                 <div class="card mb-3 has-background-grey-lighter" data-aos="fade-up" data-aos-duration="1200">
                   <div class="card-content">
@@ -39,8 +39,11 @@
                       </button>
                     {{!-- </div> --}}
                     <h4 class="title is-spaced is-5">When: {{dataValues.date}}&nbsp;at <small>{{dataValues.time}}</small></h4>
-                    <button class="button is-primary" type="button">Attending</button>
-                    <a class="button is-danger is-outlined" type="button" href="/api/delete/{{dataValues.id}}">Delete event</a>
+                    <div class="buttons is-spaced is-justify-content-center">
+                      <button class="button is-primary my-2 py-2" type="button">Attending</button>
+                      <a class="button is-danger is-outlined my-2 py-2" type="button" href="/api/delete/{{dataValues.id}}">Delete event</a>
+                    </div>
+                    
                   </div>
                 </div>
               {{/each}}
