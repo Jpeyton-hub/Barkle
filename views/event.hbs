@@ -30,20 +30,28 @@
                 <div class="field">
                     <label class="label" for="">Date:</label>
                     <div class="control">
-                        <input class="input" type="date" name="date" placeholder="dd/mm/yyyy" id="eventDate">
+                        <input class="input" type="date" name="date" placeholder="dd/mm/yyyy" id="eventDate" action="/action_page.php">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label" for="">Time:</label>
                     <div class="control">
-                        <input class="input" type="text" name="time" placeholder="What time?" id="eventTime">
+                        <input class="input" type="time" name="time" placeholder="What time?" id="eventTime">
+
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="">Event Description:</label>
+                    <div class="control">
+                        <input class="input" type="text" name="event_description" placeholder="Small gathering.." id="eventDescription">
+
                     </div>
                 </div>
                 <div class="field">
                     <label class="label" for="">Location:</label>
                     <div class="control">
 
-                        <input class="input" type="text" name="location_id" placeholder="Where is your event?" id="">
+                        <input id="searchTextField" class="input" type="text" name="location_id" placeholder="Where is your event?" id="">
                         <button class="search button mt-5 mb-2 is-primary" type="submit">Search Near Me</button>
                             <input class="input" type="text" name="field-name" placeholder="Enter your City or Zip Code"
                             id="currentLocation">
@@ -66,5 +74,12 @@ $(".search").on("click",function(event){
     var searchCriteria = $("#currentLocation").val().trim();
     console.log(searchCriteria);
     $(".mapImg").attr("src", "https://www.google.com/maps/embed/v1/search?key=AIzaSyD27JXp5yaMt6agv0okwfcdVllql4TisXs&q=dog+friendly+near+" + searchCriteria);
-})
+});
+//map autocomplete form
+function initialize() {
+  var input = document.getElementById('searchTextField');
+  new google.maps.places.Autocomplete(input);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
     </script>
