@@ -1,9 +1,9 @@
-/* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
+/* eslint-disable camelcase */
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class events extends Model {
+  class posts extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,21 +13,17 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  events.init(
+  posts.init(
     {
-      name: DataTypes.STRING,
-      date: DataTypes.STRING,
-      time: DataTypes.STRING,
-      event_description: DataTypes.STRING,
-      location_id: DataTypes.STRING,
-      user_id: DataTypes.INTEGER,
-      dogs_id: DataTypes.INTEGER,
+      poster_id: DataTypes.INTEGER,
+      event_id: DataTypes.INTEGER,
+      content: DataTypes.TEXT,
       likes: { type: DataTypes.INTEGER, defaultValue: 0 }
     },
     {
       sequelize,
-      modelName: "events"
+      modelName: "posts"
     }
   );
-  return events;
+  return posts;
 };

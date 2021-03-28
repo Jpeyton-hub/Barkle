@@ -115,4 +115,15 @@ module.exports = function(app) {
       res.send("YOU MUST BE THE EVENT OWNER IN ORDER TO DELETE");
     }
   });
+
+  // Route to add new posts
+  app.post("/api/addpost/:eventid", (req, res) => {
+    db.posts
+      .create({
+        poster_id: req.user.id,
+        event_id: req.params.eventid,
+        content: req.body.content
+      })
+      .then(post => res.redirect("/eventforum/" + post.event_id));
+  });
 };
