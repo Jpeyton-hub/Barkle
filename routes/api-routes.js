@@ -121,6 +121,7 @@ module.exports = function(app) {
     db.posts
       .create({
         poster_id: req.user.id,
+        poster_name: req.user.userName,
         event_id: req.params.eventid,
         content: req.body.content
       })
