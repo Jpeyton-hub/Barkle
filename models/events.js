@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
       event_description: DataTypes.STRING,
       location_id: DataTypes.STRING,
       user_id: DataTypes.INTEGER,
-      dogs_id: DataTypes.INTEGER
+      dogs_id: DataTypes.INTEGER,
+      likes: { type: DataTypes.INTEGER, defaultValue: 0 }
     },
     {
       sequelize,
