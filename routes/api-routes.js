@@ -132,4 +132,20 @@ module.exports = function(app) {
         res.redirect("/eventforum/" + post.event_id);
       });
   });
+
+  // Route to add likes to an event
+  app.post("/api/likepost/:eventid", (req, res) => {
+    db.events.findOne({ where: { id: req.params.eventid } }).then(event => {
+      event.increment("likes");
+      res.redirect("/eventforum/" + event.id);
+    });
+  });
+
+  // Route to add likes to an post
+  app.post("/api/likepost/:postid", (req, res) => {
+    db.posts.findOne({ where: { id: req.params.postid } }).then(post => {
+      post.increment("likes");
+      res.redirect("/eventforum/" + post.event_id);
+    });
+  });
 };
