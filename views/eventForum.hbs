@@ -1,13 +1,13 @@
 <nav class="navbar">
     <div class="container">
         <div class="navbar-brand"><a class="navbar-item" href="/"><img class="text-logo"
-                    src="./assets/img/barkle-text.png" alt="logo" width="150"></a><a class="navbar-burger"
+                    src="/assets/img/barkle-text.png" alt="logo" width="150"></a><a class="navbar-burger"
                 data-target="navMenu" role="button" aria-label="menu" aria-expanded="false"><span
                     aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div>
         <div class="navbar-menu" id="navMenu">
             <div class="navbar-start px-6">
                 <a class="navbar-item" href="/profile">My Profile</a> <a class="navbar-item" href="/dashboard">Event
-                    Dashboard</a> <a class="navbar-item" href="/logout">Logout</a>
+                    Dashboard</a> <a class="navbar-item" href="#"></a>
                 <a class="navbar-item" href="/event">Create Event</a>
             </div>
             <div class="navbar-end">
@@ -24,8 +24,8 @@
         {{#each posts}}
         <div class="card mb-3 has-background-grey-lighter" data-aos="fade-up" data-aos-duration="1200">
           <div class="card-content">
-            <h3 class="title is-4">{{dataValues.poster_name}} says</h3>
-            <p class="mb-3">{{dataValues.body}}</p>
+            <h5 class="title is-4">{{dataValues.poster_name}} says</h5>
+            <p class="mb-3">{{dataValues.content}}</p>
           </div>
         </div>
       </div>
