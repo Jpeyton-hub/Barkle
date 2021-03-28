@@ -124,6 +124,6 @@ module.exports = function(app) {
         event_id: req.params.eventid,
         content: req.body.content
       })
-      .then(res.redirect("/eventforum"));
+      .then(post => res.redirect("/eventforum/" + post.event_id));
   });
 };
