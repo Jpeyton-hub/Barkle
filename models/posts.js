@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   posts.init(
     {
       poster_id: DataTypes.INTEGER,
+      event_id: DataTypes.INTEGER,
       content: DataTypes.TEXT,
       likes: { type: DataTypes.INTEGER, defaultValue: 0 }
     },
