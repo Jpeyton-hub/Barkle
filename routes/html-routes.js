@@ -69,6 +69,8 @@ module.exports = function(app) {
   app.get("/eventforum/:eventid", (req, res) => {
     db.posts
       .findAll({ where: { event_id: req.params.eventid } })
-      .then(posts => res.render("eventForum", { posts }));
+      // eslint-disable-next-line prettier/prettier
+      .then(posts => res.render("eventForum", { posts: posts, eventid: req.params.eventid })
+      );
   });
 };
