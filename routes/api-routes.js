@@ -126,7 +126,9 @@ module.exports = function(app) {
         content: req.body.content
       })
       .then(post => {
-        console.log(post);
+        post = array.sort((a, b) => {
+          return new Date(b.date) - new Date(a.date);
+        });
         res.redirect("/eventforum/" + post.event_id);
       });
   });
