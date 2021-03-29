@@ -29,8 +29,6 @@ module.exports = function(app) {
     db.events
       .findAll({ where: { date: { [Op.gte]: moment().toDate() } } })
       .then(events => {
-        console.log(events);
-
         res.render("dash", {
           events: events.map(event => {
             return req.user.id === event.dataValues.user_id

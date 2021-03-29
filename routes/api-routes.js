@@ -84,6 +84,7 @@ module.exports = function(app) {
           event_description: req.body.event_description,
           location_id: req.body.location_id,
           user_id: req.user.id,
+          creator: req.user.userName,
           dogs_id: req.body.dogs
         })
         .then(res.redirect("/dashboard"))
@@ -95,25 +96,42 @@ module.exports = function(app) {
     }
   });
 
-  // Route to see all events or a specific one
-  app.get("/api/dash/:eventname?", (req, res) => {
-    if (req.params.eventname) {
-      // eslint-disable-next-line prettier/prettier
-      db.events.findAll({ where: { name: req.params.eventname } }).then(events => res.render("dash", { events }));
-    } else {
-      db.events.findall().then(events => res.render("dash", { events }));
-    }
+  // Route to filter events by creator
+  app.get("/api/eventcreatorsearch/", (req, res) => {
+    db.events.findAll({ where: { creator: req.body.creator } }).then(events => {
+      res.render("dash", {
+        events: events.map(event => {
+          return req.user.id === event.dataValues.user_id
+            ? { ...event, owner: true }
+            : { ...event, owner: false };
+        })
+      });
+    });
+  });
+
+  // Route to filter events by date
+  app.get("/api/eventdatesearch/", (req, res) => {
+    console.log(req.body);
+    db.events.findAll({ where: { date: req.body.date } }).then(events => {
+      res.render("dash", {
+        events: events.map(event => {
+          return req.user.id === event.dataValues.user_id
+            ? { ...event, owner: true }
+            : { ...event, owner: false };
+        })
+      });
+    });
   });
 
   // Route to delete events
   app.get("/api/delete/:eventid", (req, res) => {
-    if (req.user.id === req.body.id) {
-      db.events
-        .destroy({ where: { id: req.params.eventid } })
-        .then(res.redirect("/dashboard"));
-    } else {
-      res.send("YOU MUST BE THE EVENT OWNER IN ORDER TO DELETE");
-    }
+    db.events.findOne({ where: { id: req.params.eventid } }).then(data => {
+      if (data.dataValues.user_id === req.user.id) {
+        db.events
+          .destroy({ where: { id: req.params.eventid } })
+          .then(res.redirect("/dashboard"));
+      }
+    });
   });
 
   // Route to add new posts
@@ -126,8 +144,26 @@ module.exports = function(app) {
         content: req.body.content
       })
       .then(post => {
-        console.log(post);
+        post = array.sort((a, b) => {
+          return new Date(b.date) - new Date(a.date);
+        });
         res.redirect("/eventforum/" + post.event_id);
       });
+  });
+
+  // Route to add likes to an event
+  app.post("/api/likepost/:eventid", (req, res) => {
+    db.events.findOne({ where: { id: req.params.eventid } }).then(event => {
+      event.increment("likes");
+      res.redirect("/eventforum/" + event.id);
+    });
+  });
+
+  // Route to add likes to an post
+  app.post("/api/likepost/:postid", (req, res) => {
+    db.posts.findOne({ where: { id: req.params.postid } }).then(post => {
+      post.increment("likes");
+      res.redirect("/eventforum/" + post.event_id);
+    });
   });
 };
