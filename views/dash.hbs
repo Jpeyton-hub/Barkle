@@ -23,14 +23,14 @@
     <div class="column is-8 is-offset-2">
       <h3 class="title is-4 mb-6">Upcoming Barkle Events</h3>
       <div class="box">
-        <form action="/api/eventcreatorsearch/" method="GET">
+        <form action="/api/eventcreatorsearch/" method="POST">
           <div class="field">
             <label class="label" for="creator">Creator Username</label>
             <input class="input" id="creator" type="text" name="creator" placeholder="Search by Event Creator">
           </div>
           <button class="button mt-1 mb-2 is-primary" type="submit">Filter</button>
         </form>
-        <form action="/api/eventdatesearch/" method="GET">
+        <form action="/api/eventdatesearch/" method="POST">
           <div class="field">
             <label class="label" for="date">Event Date</label>
             <input class="input" type="date" name="date" id="date">
@@ -58,7 +58,6 @@
             <div class="buttons is-spaced is-justify-content-center">
               <a class="button is-primary my-2 py-2" type="button" href="/eventforum/{{dataValues.name}}/{{dataValues.id}}">Event Forum</a>
               {{#if owner}}<a class="button is-danger is-outlined my-2 py-2" type="button"
-
                 href="/api/delete/{{dataValues.id}}">Delete event</a>{{/if}}
               <button class="button is-info is-outlined my-2 py-2 mx-2" type="button" href="">
                 <span class="icon mr-2">
