@@ -3,6 +3,10 @@ form.login {
   margin-top: 50px;
 }
 
+body {
+  font-family: 'Varela', sans-serif;
+}
+
 .hero {
   margin:auto auto; 
   background-image: url(/assets/img/bkgrd7.jpg);
@@ -15,7 +19,7 @@ form.login {
   background-color: #ffffffc4;
 }
 
-nav {
+.navbar {
   background-color: #FAFAFA;
 }
 
