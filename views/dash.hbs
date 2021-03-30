@@ -23,14 +23,14 @@
     <div class="column is-8 is-offset-2">
       <h3 class="title is-4 mb-6">Upcoming Barkle Events</h3>
       <div class="box">
-        <form action="/api/eventcreatorsearch/" method="GET">
+        <form action="/api/eventcreatorsearch/" method="POST">
           <div class="field">
             <label class="label" for="creator">Creator Username</label>
             <input class="input" id="creator" type="text" name="creator" placeholder="Search by Event Creator">
           </div>
           <button class="button mt-1 mb-2 is-primary" type="submit">Filter</button>
         </form>
-        <form action="/api/eventdatesearch/" method="GET">
+        <form action="/api/eventdatesearch/" method="POST">
           <div class="field">
             <label class="label" for="date">Event Date</label>
             <input class="input" type="date" name="date" id="date">
