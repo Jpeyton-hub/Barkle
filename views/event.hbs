@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="columns is-centered mt-5">
-                    <iframe class= "mapImg" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyD27JXp5yaMt6agv0okwfcdVllql4TisXs&q=dog+friendly+near+Salt+Lake+County" width="640" height="480" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe class= "mapImg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193365.8065867586!2d-112.06091103501149!3d40.77652284089509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87523d9488d131ed%3A0x5b53b7a0484d31ca!2sSalt%20Lake%20City%2C%20UT!5e0!3m2!1sen!2sus!4v1617058276841!5m2!1sen!2sus" width="640" height="480" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 <div class="columns is-centered">
                 <div class="column is-half">
@@ -74,11 +74,12 @@
      <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"></script>
     <script>
+    const APIKey= "AIzaSyD27JXp5yaMt6agv0okwfcdVllql4TisXs";
 $(".search").on("click",function(event){
     event.preventDefault();
     var searchCriteria = $("#currentLocation").val().trim();
     console.log(searchCriteria);
-    $(".mapImg").attr("src", "https://www.google.com/maps/embed/v1/search?key=AIzaSyD27JXp5yaMt6agv0okwfcdVllql4TisXs&q=dog+friendly+near+" + searchCriteria);
+    $(".mapImg").attr("src", "https://www.google.com/maps/embed/v1/search?key="+APIKey+"&q=dog+friendly+near+" + searchCriteria);
 });
 //map autocomplete form
 function initialize() {
@@ -88,3 +89,5 @@ function initialize() {
 
 google.maps.event.addDomListener(window, 'load', initialize);
     </script>
+
+    
