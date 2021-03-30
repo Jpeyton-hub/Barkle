@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       poster_id: DataTypes.INTEGER,
       poster_name: DataTypes.STRING,
       event_id: DataTypes.INTEGER,
+      event_name: DataTypes.STRING,
       content: DataTypes.TEXT,
       likes: { type: DataTypes.INTEGER, defaultValue: 0 }
     },

@@ -139,12 +139,13 @@ module.exports = function(app) {
   });
 
   // Route to add new posts
-  app.post("/api/addpost/:eventid", (req, res) => {
+  app.post("/api/addpost/:eventname/:eventid", (req, res) => {
     db.posts
       .create({
         poster_id: req.user.id,
         poster_name: req.user.userName,
         event_id: req.params.eventid,
+        event_name: req.params.eventname,
         content: req.body.content
       })
       .then(post => {
