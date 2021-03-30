@@ -154,11 +154,18 @@ module.exports = function(app) {
   });
 
   // Route to add likes to an event
-  app.post("/api/likeevent/:eventid", (req, res) => {
-    db.events.findOne({ where: { id: req.params.eventid } }).then(event => {
-      event.increment("likes");
-      res.redirect("/eventforum/" + event.id);
-    });
+  app.get("/api/likeevent/:eventid/:likes", (req, res) => {
+    db.events
+      .update(
+        { likes: parseInt(req.params.likes) + 1 },
+        {
+          where: {
+            id: req.params.eventid
+          }
+        }
+      )
+      .then(() => res.redirect("/dashboard"))
+      .catch(err => console.log(err));
   });
 
   // Route to add likes to an post
