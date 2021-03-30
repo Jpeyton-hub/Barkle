@@ -7,14 +7,18 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local", { failureRedirect: '/error'}), (req, res) => {
-    // Sending back a password, even a hashed password, isn't a good idea
-    if (!req.user) {
-      res.redirect("/signup");
-    } else {
-      res.redirect("/profile");
+  app.post(
+    "/api/login",
+    passport.authenticate("local", { failureRedirect: "/error" }),
+    (req, res) => {
+      // Sending back a password, even a hashed password, isn't a good idea
+      if (!req.user) {
+        res.redirect("/signup");
+      } else {
+        res.redirect("/profile");
+      }
     }
-  });
+  );
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
@@ -34,8 +38,8 @@ module.exports = function(app) {
         res.redirect("/createProfile");
       })
       .catch(err => {
-        res.status(401).json(err);
         console.log(err);
+        res.status(401).redirect("/error");
       });
   });
 
@@ -144,7 +148,7 @@ module.exports = function(app) {
         content: req.body.content
       })
       .then(post => {
-        post = array.sort((a, b) => {
+        post = post.sort((a, b) => {
           return new Date(b.date) - new Date(a.date);
         });
         res.redirect("/eventforum/" + post.event_id);
@@ -152,7 +156,7 @@ module.exports = function(app) {
   });
 
   // Route to add likes to an event
-  app.post("/api/likepost/:eventid", (req, res) => {
+  app.post("/api/likeevent/:eventid", (req, res) => {
     db.events.findOne({ where: { id: req.params.eventid } }).then(event => {
       event.increment("likes");
       res.redirect("/eventforum/" + event.id);
