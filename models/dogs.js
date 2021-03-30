@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 "use strict";
+const { STRING } = require("sequelize");
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class dogs extends Model {
@@ -19,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
       breed: DataTypes.STRING,
       outgoing: DataTypes.BOOLEAN,
       fav_activity: DataTypes.STRING,
-      owner_id: DataTypes.INTEGER
+      owner_id: DataTypes.INTEGER,
+      dog_pic: DataTypes.STRING
     },
     {
       sequelize,
