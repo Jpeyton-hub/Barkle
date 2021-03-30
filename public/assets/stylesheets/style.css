@@ -3,17 +3,26 @@ form.login {
   margin-top: 50px;
 }
 
-body {
+.hero {
   margin:auto auto; 
+  background-image: url(/assets/img/dogplay.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
 }
 
-.navbar {
+#dogbox {
+  background-color: #ffffffc4;
+}
+
+nav {
   background-color: #FAFAFA;
 }
 
 hr {
   background-color: #4573B9;
-  max-width: 300px;
+  max-width: 250px;
   margin: 0 auto;
 }
 
@@ -54,6 +63,44 @@ input {
   margin-left: auto;
   margin-right: auto;
 }
+
+#toTop {
+  height: 50px;
+  width: 50px;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #4573B9;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 2rem;
+  box-shadow: 0 5px 20px rgba(14, 25, 80, 0.3);
+}
+
+#toTop a {
+  color: white;
+}
+
+#toTop:hover {
+  background-color: #43485c;
+  transition: all 0.2s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a.navbar-item:hover {
+  background-color: #4573b94f;
+  transition: all 0.2s ease-in-out;
+  color: black;
+}
+
 
 
 
