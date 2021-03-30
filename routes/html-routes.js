@@ -54,7 +54,13 @@ module.exports = function(app) {
           owner_id: req.params.userid
         }
       })
-      .then(dogs => res.render("profile", { dogs, user: req.params.username }));
+      .then(dogs => {
+        res.render("profile", {
+          dogs,
+          user: req.params.username,
+          owner: false
+        });
+      });
   });
 
   app.get("/profile", (req, res) => {
@@ -67,7 +73,7 @@ module.exports = function(app) {
 
       .then(dogs => {
         console.log(dogs);
-        res.render("profile", { dogs });
+        res.render("profile", { dogs, owner: true });
       })
       .catch(() => {
         res.redirect("/createProfile");
