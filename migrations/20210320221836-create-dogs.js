@@ -22,6 +22,9 @@ module.exports = {
       fav_activity: {
         type: Sequelize.STRING
       },
+      dog_pic: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
