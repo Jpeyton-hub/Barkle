@@ -29,30 +29,30 @@
                     <div class="image columns is-centered">
                         <div class="column is-6"><img class="image is-rounded" src={{dataValues.dog_pic}} alt=""></div>
                         <div class="column is-6">
-                            <h4 class="title is-spaced is-4">{{dataValues.name}}</h4>
+                            <h4 class="title is-spaced is-3">{{dataValues.name}}</h4>
                             <p class="subtitle"><strong>Favorite Activity:</strong> {{dataValues.fav_activity}}</p>
                             <div>
                                 <div class="media">
                                     <div class="media-left">
-                                        <figure class="image is-24x24"><img
+                                        <figure class="image is-48x48"><img
                                                 src="https://static.shuffle.dev/uploads/files/53/53dd366aaf02ca0745c10f8cbf2f133e39d15f5e/paw-icon.png"
                                                 alt=""></figure>
                                     </div>
                                     <div class="media-content">
                                         <div class="content">
-                                            <p><strong>Breed:</strong> {{dataValues.breed}}</p>
+                                            <p class="subtitle"><strong class="title is-4">Breed:</strong> {{dataValues.breed}}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="media">
                                     <div class="media-left">
-                                        <figure class="image is-24x24"><img
+                                        <figure class="image is-48x48"><img
                                                 src="https://static.shuffle.dev/uploads/files/53/53dd366aaf02ca0745c10f8cbf2f133e39d15f5e/Barkle-Icon.png"
                                                 alt=""></figure>
                                     </div>
                                     <div class="media-content">
                                         <div class="content">
-                                            <p><strong>Outgoing:</strong> {{dataValues.outgoing}}</p>
+                                            <p class="subtitle"><strong class="title is-4">Outgoing:</strong> {{dataValues.outgoing}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
   };
 
   function scrollFunction() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
       document.getElementById("toTop").style.display = "block";
     } else {
       document.getElementById("toTop").style.display = "none";
