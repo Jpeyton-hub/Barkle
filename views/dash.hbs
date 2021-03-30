@@ -6,9 +6,7 @@
           aria-hidden="true"></span></a></div>
     <div class="navbar-menu" id="navMenu">
       <div class="navbar-start px-6">
-        <a class="navbar-item" href="/profile">My Profile</a> <a class="navbar-item" href="/events">Create Event</a> <a
-          class="navbar-item" href="#"></a>
-        <a class="navbar-item" href="#"></a>
+        <a class="navbar-item" href="/profile">My Profile</a> <a class="navbar-item" href="/events">Create Event</a>
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
@@ -18,32 +16,33 @@
     </div>
   </div>
 </nav>
-
 <h2 class="title is-2 mt-6 mb-6 is-1 is-spaced has-text-centered">Event Dashboard</h2>
 <hr class="content-divider mb-5">
 <section class="section">
   <div class="container has-text-centered py-4">
-    <h3 class="title is-4 mb-6">Upcoming Barkle Events</h3>
-    <div class="box">
-      <form action="/api/eventcreatorsearch/" method="GET">
-        <div class="field">
-          <label for="creator">Creator Username</label>
-          <input id="creator" type="text" name="creator" placeholder="Search by Event Creator">
-        </div>
-        <button class="button is-fullwidth mt-5 is-primary" type="submit">Filter</button>
-      </form>
-      <form action="/api/eventdatesearch/" method="GET">
-        <div class="field">
-          <label for="date">Event Date</label>
-          <input type="date" name="date" id="date">
-        </div>
-        <button class="button is-fullwidth mt-5 is-primary" type="submit">Filter</button>
-      </form>
+    <div class="column is-8 is-offset-2">
+      <h3 class="title is-4 mb-6">Upcoming Barkle Events</h3>
+      <div class="box">
+        <form action="/api/eventcreatorsearch/" method="GET">
+          <div class="field">
+            <label class="label" for="creator">Creator Username</label>
+            <input class="input" id="creator" type="text" name="creator" placeholder="Search by Event Creator">
+          </div>
+          <button class="button mt-1 mb-2 is-primary" type="submit">Filter</button>
+        </form>
+        <form action="/api/eventdatesearch/" method="GET">
+          <div class="field">
+            <label class="label" for="date">Event Date</label>
+            <input class="input" type="date" name="date" id="date">
+          </div>
+          <button class="button mt-1 mb-2 is-primary" type="submit">Filter</button>
+        </form>
+      </div>
     </div>
     <hr class="content-divider mb-5">
+    {{#each events}}
     <div class="columns is-justify-content-center">
       <div class="column is-9">
-        {{#each events}}
         <div class="card mb-3 has-background-grey-lighter" data-aos="fade-up" data-aos-duration="1200">
           <div class="card-content">
             <h3 class="title is-4">{{dataValues.name}}</h3>
@@ -66,13 +65,16 @@
       </div>
     </div>
     {{/each}}
-  </div>
-  </div>
-  </div>
-  </div>
+
 </section>
+<form action="#">
+  <button id="toTop" title="Go to top">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</form>
 <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
+
 <script>
   $(".eventLocation").on("click", function (e) {
     let openMap = $(this).text().trim();
@@ -81,4 +83,15 @@
     console.log(openMap)
   })
 
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      document.getElementById("toTop").style.display = "block";
+    } else {
+      document.getElementById("toTop").style.display = "none";
+    }
+  }
 </script>

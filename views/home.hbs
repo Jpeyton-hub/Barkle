@@ -5,10 +5,6 @@
         aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span
           aria-hidden="true"></span></a></div>
     <div class="navbar-menu" id="navMenu">
-      {{!-- <div class="navbar-start">
-        <a class="navbar-item" href="#"></a> <a class="navbar-item" href="#"></a> <a class="navbar-item" href="#"></a>
-        <a class="navbar-item" href="#"></a>
-      </div> --}}
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons"><a class="button is-info" href="/login">Log in</a><a class="button is-primary"
@@ -19,27 +15,25 @@
   </div>
 </nav>
 
-<section class="hero">
+<section class="hero is-small">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <div data-aos="flip-down" data-aos-duration="1500">
+      <div data-aos="zoom-in" data-aos-duration="1500">
         <div class="columns is-centered is-medium">
-          <div class="column is-10 has-text-centered"><img class="" src="./assets/img/barkle-logo.png"
-              alt="barkle-logo"></div>
+          <div class="column is-10 has-text-centered"><img class="" src="./assets/img/barkleSVG.svg" alt="barkle-logo">
+          </div>
         </div>
       </div>
-      <h1 class="title is-spaced">Because Your Dog Needs Friends Too!</h1>
-      <hr class="content-divider mb-5">
-      <h2 class="subtitle ">Woof woof bark bark bark. This is where the about app would go. Lorem ipsum dolor, sit
-        amet consectetur adipisicing elit. Necessitatibus odio officia accusamus culpa voluptate maiores rerum
-        repellat, cupiditate consectetur mollitia nostrum facilis ipsam impedit deleniti? Quasi hic velit quod
-        provident? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates nam totam laudantium animi,
-        eligendi quia aut repellendus maxime ullam incidunt aliquam itaque deleniti nihil odio iste possimus suscipit
-        corporis nesciunt.</h2>
-      <div class="buttons is-centered mb-0"><a class="button is-primary" href="/signup">Sign up for free</a></div>
-
+      <div class="box column is-8 is-offset-2" id="dogbox">
+        <h1 class="title is-spaced">Because Your Dog Needs Friends Too!</h1>
+        <hr class="content-divider mb-5">
+        <h2 class="subtitle ">Barkle is the community for dogs and their dog owners to connect and make friends. Create
+          events centered around dog friendly locations for you and your dog to make friends and have fun!</h2>
+        <div class="buttons is-centered mb-0"><a class="button is-primary" href="/signup">Sign up for free</a></div>
+      </div>
     </div>
 </section>
+
 <section class="section">
   <div class="container">
     <h2 class="title has-text-centered mb-5">What do Barkle users think?</h2>
@@ -114,3 +108,25 @@
     </div>
   </div>
 </section>
+
+<form action="#">
+  <button id="toTop" title="Go to top">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</form>
+
+<script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+<script>
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      document.getElementById("toTop").style.display = "block";
+    } else {
+      document.getElementById("toTop").style.display = "none";
+    }
+  }</script>

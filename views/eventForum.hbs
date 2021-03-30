@@ -7,7 +7,7 @@
         <div class="navbar-menu" id="navMenu">
             <div class="navbar-start px-6">
                 <a class="navbar-item" href="/profile">My Profile</a> <a class="navbar-item" href="/dashboard">Event
-                    Dashboard</a><a class="navbar-item" href="#"></a>
+                    Dashboard</a>
                 <a class="navbar-item" href="/event">Create Event</a>
             </div>
             <div class="navbar-end">
@@ -26,28 +26,29 @@
             <hr class="content-divider mb-5">
             <div class="field">
                 <div class="box">
-                <label class="label" for="">Write a note:</label>
-                <div class="control">
-                    <input class="input" type="text" name="content" placeholder="Your message here..." id="postContent">
+                    <label class="label" for="">Write a note:</label>
+                    <div class="control">
+                        <input class="input" type="text" name="content" placeholder="Your message here..."
+                            id="postContent">
+                    </div>
                 </div>
-            </div>
-            <div class="columns is-centered">
-                <div class="column is-two-fifths">
-            <button class="button is-fullwidth is-primary mb-5" type="submit">Post</button>
+                <div class="columns is-centered">
+                    <div class="column is-two-fifths">
+                        <button class="button is-fullwidth is-primary mb-5" type="submit">Post</button>
+                    </div>
                 </div>
-            </div>
         </form>
     </div>
 
-         {{#each posts}}
-        <div class="card mb-3 has-background-grey-lighter" data-aos="fade-up" data-aos-duration="1200">
-          <div class="card-content">
+    {{#each posts}}
+    <div class="card mb-3 has-background-grey-lighter" data-aos="fade-up" data-aos-duration="1200">
+        <div class="card-content">
             <h5 class="title is-4">{{dataValues.poster_name}} says</h5>
             <p class="mb-3 subtitle is-5">{{dataValues.content}}</p>
             <p class="mb-3">at {{dataValues.createdAt}}</p>
-          </div>
         </div>
-        {{/each}}
+    </div>
+    {{/each}}
 
     </div>
 </section>
