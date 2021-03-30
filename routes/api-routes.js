@@ -101,7 +101,7 @@ module.exports = function(app) {
   });
 
   // Route to filter events by creator
-  app.get("/api/eventcreatorsearch/", (req, res) => {
+  app.post("/api/eventcreatorsearch/", (req, res) => {
     db.events.findAll({ where: { creator: req.body.creator } }).then(events => {
       res.render("dash", {
         events: events.map(event => {
@@ -114,7 +114,7 @@ module.exports = function(app) {
   });
 
   // Route to filter events by date
-  app.get("/api/eventdatesearch/", (req, res) => {
+  app.post("/api/eventdatesearch/", (req, res) => {
     console.log(req.body);
     db.events.findAll({ where: { date: req.body.date } }).then(events => {
       res.render("dash", {

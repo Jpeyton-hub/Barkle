@@ -66,7 +66,10 @@ module.exports = function(app) {
 
   app.get("/eventforum/:eventname/:eventid", (req, res) => {
     db.posts
-      .findAll({ where: { event_id: req.params.eventid } })
+      .findAll({
+        where: { event_id: req.params.eventid },
+        order: [["createdAt", "DESC"]]
+      })
       // eslint-disable-next-line prettier/prettier
       .then(posts => res.render("eventForum", { posts: posts, eventid: req.params.eventid, eventname: req.params.eventname })
       );

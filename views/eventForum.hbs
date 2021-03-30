@@ -22,7 +22,7 @@
 <section class="section">
     <div class="column is-6 is-offset-3">
         <form action="/api/addpost/{{eventname}}/{{eventid}}" method="POST" class="">
-            <h2 class="title is-2 mt-6 mb-6 is-1 is-spaced has-text-centered">Post Something on the {{eventname}} Message Board!</h2>
+            <h2 class="title is-2 mt-6 mb-6 is-1 is-spaced has-text-centered">Post Something on the <span class="has-text-warning is-italic" style="text-decoration: underline;"> {{eventname}}</span> Message Board!</h2>
             <hr class="content-divider mb-5">
             <div class="field">
                 <div class="box">
@@ -43,9 +43,21 @@
     {{#each posts}}
     <div class="card mb-3 has-background-grey-lighter" data-aos="fade-up" data-aos-duration="1200">
         <div class="card-content">
-            <h5 class="title is-4">{{dataValues.poster_name}} says</h5>
-            <p class="mb-3 subtitle is-5">{{dataValues.content}}</p>
-            <p class="mb-3">at {{dataValues.createdAt}}</p>
+            <h5 class="title is-4 has-text-info-dark">Comment from {{dataValues.poster_name}}</h5>
+            <p class="subtitle is-6 has-text-grey">on {{dataValues.createdAt}}</p>
+            <p class="my-3 subtitle is-5">{{dataValues.content}}</p>
+            {{!-- <p class="mb-3">at {{dataValues.createdAt}}</p> --}}
+            <button class="button is-info is-outlined my-3 is-pulled-right" type="button" href="">
+                <span class="icon mr-2">
+                    <i class="fas fa-thumbs-up"></i>
+                </span>
+                <span class="mr-2">
+                    Like post
+                </span>
+                <span class="has-text-danger">
+                    ({{dataValues.likes}})
+                </span>
+            </button>
         </div>
     </div>
     {{/each}}
