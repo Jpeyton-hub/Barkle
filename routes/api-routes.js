@@ -72,7 +72,8 @@ module.exports = function(app) {
         breed: req.body.breed,
         outgoing: req.body.outgoing,
         fav_activity: req.body.fav,
-        owner_id: req.user.id
+        owner_id: req.user.id,
+        dog_pic: req.body.dogIcon
       })
       .then(res.redirect("/profile"));
   });
