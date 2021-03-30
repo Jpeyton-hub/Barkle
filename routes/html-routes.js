@@ -47,6 +47,16 @@ module.exports = function(app) {
     res.render("signup");
   });
 
+  app.get("/viewprofile/:username/:userid", (req, res) => {
+    db.dogs
+      .findAll({
+        where: {
+          owner_id: req.params.userid
+        }
+      })
+      .then(dogs => res.render("profile", { dogs, user: req.params.username }));
+  });
+
   app.get("/profile", (req, res) => {
     db.dogs
       .findAll({
