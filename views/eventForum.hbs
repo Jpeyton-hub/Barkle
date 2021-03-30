@@ -47,7 +47,7 @@
             <p class="subtitle is-6 has-text-grey">on {{dataValues.createdAt}}</p>
             <p class="my-3 subtitle is-5">{{dataValues.content}}</p>
             {{!-- <p class="mb-3">at {{dataValues.createdAt}}</p> --}}
-            <button class="button is-info is-outlined my-3 is-pulled-right" type="button" href="">
+            <a class="button is-info is-outlined my-3 is-pulled-right" type="button" href="/api/likepost/{{dataValues.id}}/{{dataValues.likes}}/{{dataValues.event_name}}/{{dataValues.event_id}}">
                 <span class="icon mr-2">
                     <i class="fas fa-thumbs-up"></i>
                 </span>
@@ -57,7 +57,7 @@
                 <span class="has-text-danger">
                     ({{dataValues.likes}})
                 </span>
-            </button>
+            </a>
         </div>
     </div>
     {{/each}}
