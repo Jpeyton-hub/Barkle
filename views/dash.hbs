@@ -56,8 +56,9 @@
             </button>
             <h4 class="title is-spaced is-5">When: {{dataValues.date}}&nbsp;at <small>{{dataValues.time}}</small></h4>
             <div class="buttons is-spaced is-justify-content-center">
-              <a class="button is-primary my-2 py-2 mx-2" type="button" href="/eventforum/{{dataValues.id}}">Event Forum</a>
-              {{#if owner}}<a class="button is-danger is-outlined my-2 py-2 mx-2" type="button"
+              <a class="button is-primary my-2 py-2" type="button" href="/eventforum/{{dataValues.name}}/{{dataValues.id}}">Event Forum</a>
+              {{#if owner}}<a class="button is-danger is-outlined my-2 py-2" type="button"
+
                 href="/api/delete/{{dataValues.id}}">Delete event</a>{{/if}}
               <button class="button is-info is-outlined my-2 py-2 mx-2" type="button" href="">
                 <span class="icon mr-2">
