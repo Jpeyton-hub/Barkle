@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "root",
-      "password": "JWalk!1989",
+      "password": "",
       "database": "barkle_db",
       "host": "127.0.0.1",
       "dialect": "mysql"

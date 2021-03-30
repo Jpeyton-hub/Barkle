@@ -5,11 +5,10 @@ form.login {
 
 .hero {
   margin:auto auto; 
-  background-image: url(/assets/img/dogplay.jpg);
+  background-image: url(/assets/img/bkgrd7.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: center center;
 }
 
 #dogbox {
