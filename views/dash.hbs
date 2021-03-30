@@ -58,7 +58,19 @@
             <div class="buttons is-spaced is-justify-content-center">
               <a class="button is-primary my-2 py-2" type="button" href="/eventforum/{{dataValues.name}}/{{dataValues.id}}">Event Forum</a>
               {{#if owner}}<a class="button is-danger is-outlined my-2 py-2" type="button"
+
                 href="/api/delete/{{dataValues.id}}">Delete event</a>{{/if}}
+              <button class="button is-info is-outlined my-2 py-2 mx-2" type="button" href="">
+                <span class="icon mr-2">
+                  <i class="fas fa-thumbs-up"></i>
+                </span>
+                <span class="mr-2">
+                  Like event
+                </span>
+                <span class="has-text-danger">
+                  ({{dataValues.likes}})
+                </span>
+              </button>
             </div>
           </div>
         </div>
@@ -72,6 +84,7 @@
     <i class="fas fa-angle-up"></i>
   </button>
 </form>
+
 <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
 
@@ -88,7 +101,7 @@
   };
 
   function scrollFunction() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       document.getElementById("toTop").style.display = "block";
     } else {
       document.getElementById("toTop").style.display = "none";
