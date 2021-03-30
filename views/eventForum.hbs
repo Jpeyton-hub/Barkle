@@ -64,3 +64,23 @@
 
     </div>
 </section>
+
+<form action="#">
+  <button id="toTop" title="Go to top">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</form>
+
+<script>
+window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      document.getElementById("toTop").style.display = "block";
+    } else {
+      document.getElementById("toTop").style.display = "none";
+    }
+  }
+  </script>
