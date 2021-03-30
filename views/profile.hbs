@@ -1,13 +1,13 @@
 <nav class="navbar">
     <div class="container">
-        <div class="navbar-brand"><a class="navbar-item" href="/"><img src="./assets/img/barkle-text.png" alt="logo"
+        <div class="navbar-brand"><a class="navbar-item" href="/"><img src="/assets/img/barkle-text.png" alt="logo"
                     width="150"></a><a class="navbar-burger" data-target="navMenu" role="button" aria-label="menu"
                 aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span
                     aria-hidden="true"></span></a></div>
         <div class="navbar-menu" id="navMenu">
             <div class="navbar-start px-6">
                 <a class="navbar-item" href="/events">Create Event</a> <a class="navbar-item" href="/dashboard">Event
-                    Dashboard</a>
+                    Dashboard</a> <a class="navbar-item" href="/profile">My Profile</a>
             </div>
             <div class="navbar-end">
                 <div class="navbar-item">
@@ -21,7 +21,11 @@
 
 <section class="section">
     <div class="container py-4">
+        {{#if owner}}
         <h2 class="title has-text-centered mb-6">Your Barkle Profile</h2>
+        {{else}}
+        <h2 class="title has-text-centered mb-6">{{user}}'s Profile</h2>
+        {{/if}}
         <hr class="content-divider mb-5">
         {{#each dogs}}
             <div class="card mb-3 has-background-grey-lighter" data-aos="fade-up" data-aos-duration="1200">
@@ -62,10 +66,10 @@
                 </div>
             </div>
         {{/each}}
-        <div class="column is-6 is-offset-3">
+        {{#if owner}}<div class="column is-6 is-offset-3">
             <div class="buttons is-centered my-4"><a class="button is-primary" href="/createProfile">Add Another
                     Dog</a></div>
-        </div>
+        </div>{{/if}}
 </section>
 
 <form action="#">
