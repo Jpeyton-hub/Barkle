@@ -106,7 +106,7 @@ module.exports = function(app) {
     db.events
       .findAll({
         where: { creator: req.body.creator },
-        order: [["createdAt", "DESC"]]
+        order: [["date", "DESC"]]
       })
       .then(events => {
         res.render("dash", {
@@ -124,7 +124,7 @@ module.exports = function(app) {
     db.events
       .findAll({
         where: { date: req.body.date },
-        order: [["createdAt", "DESC"]]
+        order: [["date", "DESC"]]
       })
       .then(events => {
         res.render("dash", {
@@ -142,7 +142,7 @@ module.exports = function(app) {
     db.events
       .findAll({
         where: { location_id: req.body.location },
-        order: [["createdAt", "DESC"]]
+        order: [["date", "DESC"]]
       })
       .then(events => {
         res.render("dash", {
