@@ -1,6 +1,6 @@
 <nav class="navbar">
     <div class="container">
-        <div class="navbar-brand"><a class="navbar-item" href="/"><img src="/assets/img/barkle-text.png" alt="logo"
+        <div class="navbar-brand"><a class="navbar-item" href="/"><img class="text-logo" src="/assets/img/barkle-text.png" alt="logo"
                     width="150"></a><a class="navbar-burger" data-target="navMenu" role="button" aria-label="menu"
                 aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span
                     aria-hidden="true"></span></a></div>
@@ -32,7 +32,7 @@
                 <div class="card-content">
                     <div class="image columns is-centered">
                         <div class="column is-6"><img class="image is-rounded" src={{dataValues.dog_pic}} alt=""></div>
-                        {{#if owner}}<a class="editDog" href="/editDog/{{dataValues.id}}">Edit info</a>{{/if}}
+                        {{#if owner}}<a class="editDog button is-info" href="/editDog/{{dataValues.id}}">Edit info</a>{{/if}}
                         <div class="column is-6">
                             <h4 class="title is-spaced is-3">{{dataValues.name}}</h4>
                             <p class="subtitle"><strong>Favorite Activity:</strong> {{dataValues.fav_activity}}</p>
