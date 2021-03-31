@@ -126,29 +126,56 @@ module.exports = function(app) {
 
   // Route to filter events by creator
   app.post("/api/eventcreatorsearch/", (req, res) => {
-    db.events.findAll({ where: { creator: req.body.creator } }).then(events => {
-      res.render("dash", {
-        events: events.map(event => {
-          return req.user.id === event.dataValues.user_id
-            ? { ...event, owner: true }
-            : { ...event, owner: false };
-        })
+    db.events
+      .findAll({
+        where: { creator: req.body.creator },
+        order: [["date", "DESC"]]
+      })
+      .then(events => {
+        res.render("dash", {
+          events: events.map(event => {
+            return req.user.id === event.dataValues.user_id
+              ? { ...event, owner: true }
+              : { ...event, owner: false };
+          })
+        });
       });
-    });
   });
 
   // Route to filter events by date
   app.post("/api/eventdatesearch/", (req, res) => {
-    console.log(req.body);
-    db.events.findAll({ where: { date: req.body.date } }).then(events => {
-      res.render("dash", {
-        events: events.map(event => {
-          return req.user.id === event.dataValues.user_id
-            ? { ...event, owner: true }
-            : { ...event, owner: false };
-        })
+    db.events
+      .findAll({
+        where: { date: req.body.date },
+        order: [["date", "DESC"]]
+      })
+      .then(events => {
+        res.render("dash", {
+          events: events.map(event => {
+            return req.user.id === event.dataValues.user_id
+              ? { ...event, owner: true }
+              : { ...event, owner: false };
+          })
+        });
       });
-    });
+  });
+
+  // Route to filter events by location
+  app.post("/api/eventlocationsearch/", (req, res) => {
+    db.events
+      .findAll({
+        where: { location_id: req.body.location },
+        order: [["date", "DESC"]]
+      })
+      .then(events => {
+        res.render("dash", {
+          events: events.map(event => {
+            return req.user.id === event.dataValues.user_id
+              ? { ...event, owner: true }
+              : { ...event, owner: false };
+          })
+        });
+      });
   });
 
   // Route to delete events

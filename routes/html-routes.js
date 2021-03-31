@@ -27,7 +27,10 @@ module.exports = function(app) {
 
   app.get("/dashboard", (req, res) => {
     db.events
-      .findAll({ where: { date: { [Op.gte]: moment().toDate() } } })
+      .findAll({
+        where: { date: { [Op.gte]: moment().toDate() } },
+        order: [["date", "DESC"]]
+      })
       .then(events => {
         res.render("dash", {
           events: events.map(event => {
