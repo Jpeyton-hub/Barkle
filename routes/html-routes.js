@@ -29,7 +29,7 @@ module.exports = function(app) {
     db.events
       .findAll({
         where: { date: { [Op.gte]: moment().toDate() } },
-        order: [["createdAt", "DESC"]]
+        order: [["date", "DESC"]]
       })
       .then(events => {
         res.render("dash", {
