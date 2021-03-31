@@ -37,6 +37,13 @@
           </div>
           <button class="button mt-1 mb-2 is-primary" type="submit">Filter</button>
         </form>
+         <form action="/api/eventlocationsearch/" method="POST">
+          <div class="field">
+            <label class="label" for="location">Event Location</label>
+            <input class="input" id="locationSearch" type="text" name="location" placeholder="Search by Event Location">
+          </div>
+          <button class="button mt-1 mb-2 is-primary" type="submit">Filter</button>
+        </form>
       </div>
     </div>
     <hr class="content-divider mb-5">
@@ -88,6 +95,13 @@
   crossorigin="anonymous"></script>
 
 <script>
+  function initialize() {
+  var input = document.getElementById('locationSearch');
+  new google.maps.places.Autocomplete(input);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
   $(".eventLocation").on("click", function (e) {
     let openMap = $(this).text().trim();
 
@@ -107,11 +121,4 @@ function scrollFunction() {
     }
   }
 
-//$(".likeEvent").on("click", function (c) {
-//let eventID = $(this).data("value");
-//$.ajax({
-  //type: "POST",
-  //URL: `/api/likeevent/${eventID}`
-//})
-//}, {once: true})
 </script>
