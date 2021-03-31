@@ -78,6 +78,29 @@ module.exports = function(app) {
       .then(res.redirect("/profile"));
   });
 
+  // Route for editing an existing dog in the db
+
+  app.post("/api/edit/:dogsid/:name/:breed/:outgoing", (req, res) => {
+    db.dogs
+      .update(
+        {
+          name: req.body.name || req.params.name,
+          breed: req.body.breed || req.params.breed,
+          outgoing: req.body.outgoing || req.params.outgoing,
+          fav_activity: req.body.fav,
+          owner_id: req.user.id,
+          dog_pic: req.body.dogIcon
+        },
+        {
+          where: {
+            id: req.params.dogsid
+          }
+        }
+      )
+      .then(res.redirect("/profile"))
+      .catch(err => console.log(err));
+  });
+
   // Route for adding a new event to db
   app.post("/api/addevents", (req, res) => {
     if (req.user) {
