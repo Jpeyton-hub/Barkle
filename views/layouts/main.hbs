@@ -8,20 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=B612:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=B612:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link rel="stylesheet" href="/assets/stylesheets/style.css">
   <script src="https://kit.fontawesome.com/b3ac2c6d7a.js" crossorigin="anonymous"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF2WSYFvZVvqMhE7FwdTLOlZ_trxNv5Sw&libraries=places"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF2WSYFvZVvqMhE7FwdTLOlZ_trxNv5Sw&libraries=places"></script>
   <title>Barkle</title>
 </head>
 
 <body>
-	{{{body}}}
+  {{{body}}}
 
-<footer class="footer">
+  <footer class="footer pb-2 pt-5">
     <div class="container has-text-centered">
       <div class="block"><a class="title is-4" href="#">Woof &#128054;</a></div>
       <div class="level">
@@ -29,31 +30,34 @@
           <figure class="image is-48x48"><img src="/assets/img/Barkle Icon.png" alt=""></figure>
         </div>
       </div>
-      <!-- <div class="buttons is-centered"><a class="button" href="#"><img src="placeholder/icons/twitter.svg" alt=""></a><a class="button" href="#"><img src="placeholder/icons/facebook-f.svg" alt=""></a><a class="button" href="#"><img src="placeholder/icons/instagram.svg" alt=""></a><a class="button" href="#"><img src="placeholder/icons/linkedin-in.svg" alt=""></a></div> -->
+      <div class="buttons is-centered"><a class="button" href="https://www.instagram.com/therealbarkle/"
+          target="_blank"><img src="/assets/img/instagram2.svg" alt="instagram-link"></a></div>
       <p class="subtitle is-6">© 2021 Team Barkle. All rights reserved.</p>
-      <p><a class= "dogVector" href='https://www.freepik.com/vectors/dog'>Dog vectors created by freepik - www.freepik.com</a></p>
+      <p><a class="dogVector" href='https://www.freepik.com/vectors/dog'>Dog vectors created by freepik -
+          www.freepik.com</a></p>
     </div>
   </footer>
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" ></script>
-<script>AOS.init()</script>
-<script>document.addEventListener('DOMContentLoaded', () => {
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+  <script>AOS.init()</script>
+  <script>document.addEventListener('DOMContentLoaded', () => {
 
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-  if ($navbarBurgers.length > 0) {
+      if ($navbarBurgers.length > 0) {
 
-    $navbarBurgers.forEach( el => {
-      el.addEventListener('click', () => {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
 
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
 
-        el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
 
-      });
-    });
-  }
-});</script>
+          });
+        });
+      }
+    });</script>
 </body>
+
 </html>
