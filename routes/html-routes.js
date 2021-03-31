@@ -57,7 +57,7 @@ module.exports = function(app) {
         console.log(dogs);
         res.render("editDog", {
           dogs,
-          owner: true,
+          owner: true
         });
       });
   });
@@ -89,8 +89,8 @@ module.exports = function(app) {
           owner_id: req.user.id
         }
       })
-
       .then(dogs => {
+        dogs.map(dog => (dog.owner = true));
         console.log(dogs);
         res.render("profile", { dogs, owner: true });
       })
