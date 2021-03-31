@@ -43,6 +43,22 @@ module.exports = function(app) {
     res.render("event");
   });
 
+  app.get("/editDog/:dogsid", (req, res) => {
+    db.dogs
+      .findAll({
+        where: {
+          id: req.params.dogsid
+        }
+      })
+      .then(dogs => {
+        console.log(dogs);
+        res.render("editDog", {
+          dogs,
+          owner: true,
+        });
+      });
+  });
+
   app.get("/signup", (req, res) => {
     res.render("signup");
   });

@@ -104,5 +104,8 @@ a.navbar-item:hover {
   color: black;
 }
 
-
+.editDog {
+  position: absolute;
+  right: 0;
+}
 
