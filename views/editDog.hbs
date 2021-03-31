@@ -1,0 +1,127 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-brand"><a class="navbar-item" href="/"><img class="text-logo" src="/assets/img/barkle-text.png"
+          alt="logo" width="150"></a><a class="navbar-burger" data-target="navMenu" role="button" aria-label="menu"
+        aria-expanded="false"><span aria-hidden="true"></span><span aria-hidden="true"></span><span
+          aria-hidden="true"></span></a></div>
+    <div class="navbar-menu" id="navMenu">
+      <div class="navbar-start px-6">
+        <a class="navbar-item" href="/events">Create Event</a> <a class="navbar-item" href="/profile">My Profile</a> <a
+          class="navbar-item" href="/dashboard">Event Dashboard</a>
+        <a class="navbar-item" href="#"></a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons"><a class="button is-danger" href="/logout">Log Out</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<h2 class="title is-2 mt-6 mb-6 is-1 is-spaced has-text-centered">Edit Your Barkle Profile</h2>
+<hr class="content-divider mb-5">
+{{#each dogs}}
+<section class="section">
+  <div class= "columns  is-offset-3">
+    <form action="/api/edit/{{dataValues.id}}/{{dataValues.name}}/{{dataValues.breed}}/{{dataValues.outgoing}}" method="POST" class="" id="create-form">
+<figure class="columns is-medium mt-3">
+  <div class="field image column" >
+    <label class="radio" for="" id="thumbnail">
+  <input class="form-check-input" type="radio" name="dogIcon" value="/assets/dogVectors/dog1.jpg">
+  <img src="/assets/dogVectors/dog1.jpg">
+</label>
+</div>
+  <div class="field image column" >
+    <label class="radio" for="" id="thumbnail">
+  <input class="form-check-input" type="radio" name="dogIcon" value="/assets/dogVectors/dog2.jpg">
+  <img src="/assets/dogVectors/dog2.jpg">
+</label>
+</div>
+  <div class="field image column" >
+    <label class="radio" for="" id="thumbnail">
+  <input class="form-check-input" type="radio" name="dogIcon" value="/assets/dogVectors/dog3.jpg">
+  <img src="/assets/dogVectors/dog3.jpg">
+</label>
+</div>
+  </figure>
+<figure class="columns is-medium mt-3">
+  <div class="field image column" >
+    <label class="radio" for="" id="thumbnail">
+  <input class="form-check-input" type="radio" name="dogIcon" value="/assets/dogVectors/dog4.jpg">
+  <img src="/assets/dogVectors/dog4.jpg">
+</label>
+</div>
+  <div class="field image column" >
+    <label class="radio" for="" id="thumbnail">
+  <input class="form-check-input" type="radio" name="dogIcon" value="/assets/dogVectors/dog5.jpg">
+  <img src="/assets/dogVectors/dog5.jpg">
+</label>
+</div>
+  <div class="field image column" >
+    <label class="radio" for="" id="thumbnail">
+  <input class="form-check-input" type="radio" name="dogIcon" value="/assets/dogVectors/dog6.jpg">
+  <img src="/assets/dogVectors/dog6.jpg">
+</label>
+</div>
+  </figure>
+<figure class="columns is-medium mt-3">
+  <div class="field image column" >
+    <label class="radio" for="" id="thumbnail">
+  <input class="form-check-input" type="radio" name="dogIcon" value="/assets/dogVectors/dog7.jpg">
+  <img src="/assets/dogVectors/dog7.jpg">
+</label>
+</div>
+  <div class="field image column" >
+    <label class="radio" for="" id="thumbnail">
+  <input class="form-check-input" type="radio" name="dogIcon" value="/assets/dogVectors/dog8.jpg">
+  <img src="/assets/dogVectors/dog8.jpg">
+</label>
+</div>
+  <div class="field image column" >
+    <label class="radio" for="" id="thumbnail">
+  <input class="form-check-input" type="radio" name="dogIcon" value="/assets/dogVectors/dog8.jpg">
+  <img src="/assets/dogVectors/dog9.jpg">
+</label>
+</div>
+  </figure>
+  </div>
+<div class="column is-6 is-offset-3">
+      <div class="field">
+        <label class="label" for="">Dog Name:</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Your dog's name" id="dogName" name="name" value="{{dataValues.name}}">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="">Dog Breed:</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Your dog's breed " id="breed" name="breed" value="{{dataValues.breed}}">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="">Favorite Activities:</label>
+        <div class="control"><textarea class="textarea" rows="3" placeholder="Tell us your dog's favorite activities"
+            name="fav">{{dataValues.fav_activity}}</textarea></div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label class="radio" for="">Traits:
+            <input class="form-check-input" type="radio" name="outgoing" value="false" checked="">
+            <span class="ml-1">Shy</span>
+          </label>
+          <label class="radio" for="">
+            <input class="form-check-input" type="radio" name="outgoing" value="true">
+            <span class="ml-1">Outgoing</span>
+          </label>
+        </div>
+      </div><button class="button is-primary is-fullwidth" type="submit">Submit</button>
+    </form>
+    </div>
+  </div>
+</section>
+{{/each}}
+<script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
