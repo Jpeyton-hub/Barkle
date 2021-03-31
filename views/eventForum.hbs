@@ -43,11 +43,11 @@
     {{#each posts}}
     <div class="card mb-3 has-background-grey-lighter" data-aos="fade-up" data-aos-duration="1200">
         <div class="card-content">
-            <h5 class="title is-4 has-text-info-dark">Comment from {{dataValues.poster_name}}</h5>
+            <h5 class="title is-4 has-text-info-dark">Comment from <a href="/viewprofile/{{dataValues.poster_name}}/{{dataValues.poster_id}}">{{dataValues.poster_name}}</a></h5>
             <p class="subtitle is-6 has-text-grey">on {{dataValues.createdAt}}</p>
             <p class="my-3 subtitle is-5">{{dataValues.content}}</p>
             {{!-- <p class="mb-3">at {{dataValues.createdAt}}</p> --}}
-            <button class="button is-info is-outlined my-3 is-pulled-right" type="button" href="">
+            <a class="button is-info is-outlined my-3 is-pulled-right" type="button" href="/api/likepost/{{dataValues.id}}/{{dataValues.likes}}/{{dataValues.event_name}}/{{dataValues.event_id}}">
                 <span class="icon mr-2">
                     <i class="fas fa-thumbs-up"></i>
                 </span>
@@ -57,10 +57,30 @@
                 <span class="has-text-danger">
                     ({{dataValues.likes}})
                 </span>
-            </button>
+            </a>
         </div>
     </div>
     {{/each}}
 
     </div>
 </section>
+
+<form action="#">
+  <button id="toTop" title="Go to top">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</form>
+
+<script>
+window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      document.getElementById("toTop").style.display = "block";
+    } else {
+      document.getElementById("toTop").style.display = "none";
+    }
+  }
+  </script>

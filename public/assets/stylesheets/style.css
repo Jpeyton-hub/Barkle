@@ -3,20 +3,23 @@ form.login {
   margin-top: 50px;
 }
 
+body {
+  font-family: 'Varela', sans-serif;
+}
+
 .hero {
   margin:auto auto; 
-  background-image: url(/assets/img/dogplay.jpg);
+  background-image: url(/assets/img/bkgrd7.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-position: center center;
 }
 
 #dogbox {
   background-color: #ffffffc4;
 }
 
-nav {
+.navbar {
   background-color: #FAFAFA;
 }
 
