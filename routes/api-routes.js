@@ -2,6 +2,14 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+// const router = require("express").Router();
+// const authCheck = (req, res, next) => {
+//   if (!req.user) {
+//     res.redirect("/auth/login");
+//   } else {
+//     next();
+//   }
+// };
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -239,3 +247,10 @@ module.exports = function(app) {
       .catch(err => console.log(err));
   });
 };
+
+//route for google auth
+// router.get("/", authCheck, (req, res) => {
+//   res.render("profile");
+// });
+
+// module.exports = router;

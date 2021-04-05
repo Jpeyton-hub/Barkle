@@ -1,7 +1,9 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
+const GoogleStrategy = require("passport-google-oauth20");
 
 const db = require("../models");
+// const User = require("../models/user");
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 passport.use(
@@ -33,6 +35,38 @@ passport.use(
         // If none of the above, return the user
         return done(null, dbUser);
       });
+    }
+  )
+);
+
+//google sign in strategy
+passport.use(
+  new GoogleStrategy(
+    {
+      callbackURL: "/auth/google/redirect",
+      clientID:
+        "1052973621284-gnqhinj66h7mub9qc9lkjgan3ldkvp4l.apps.googleusercontent.com",
+      clientSecret: "PDA5Gu-UiwaMb3clkX7Ws9Zi"
+    },
+    (accessToken, refreshToken, profile, done) => {
+      console.log(profile);
+      //check if user exists in our db
+      db.User.findOne({ where: { email: profile.emails[0].value } }).then(
+        currentUser => {
+          if (currentUser) {
+            //already have the user
+            console.log("user is: ", currentUser);
+          } else {
+            //if not create a new user in the db
+            db.User.create({
+              email: profile.emails[0].value,
+              userName: profile.displayName
+            }).then(newUser => {
+              console.log("new user created: " + newUser);
+            });
+          }
+        }
+      );
     }
   )
 );
