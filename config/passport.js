@@ -43,7 +43,7 @@ passport.use(
 passport.use(
   new GoogleStrategy(
     {
-      callbackURL: "/auth/google/redirect",
+      callbackURL: "http://localhost:8080/auth/google/redirect",
       clientID:
         "1052973621284-gnqhinj66h7mub9qc9lkjgan3ldkvp4l.apps.googleusercontent.com",
       clientSecret: "PDA5Gu-UiwaMb3clkX7Ws9Zi"
@@ -67,6 +67,7 @@ passport.use(
           }
         }
       );
+      return done(null, profile);
     }
   )
 );
