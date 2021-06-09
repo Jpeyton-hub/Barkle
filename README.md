@@ -5,6 +5,8 @@
 #### Barkle is a web app designed to facilitate meetups for dogs and their humans at dog-friendly locations. We want you and your dog to make new friends!
 ---
 
+![webite screenshot](./public/assets/img/barkleshot.jpeg)
+
 >## Table of Contents
 ---
 - [Installation](###Installation)
